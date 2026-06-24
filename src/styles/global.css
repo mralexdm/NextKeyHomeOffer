@@ -47,9 +47,9 @@ h1,h2,h3{font-family:var(--font-display);line-height:1.12;font-weight:700;letter
 .hdr__in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;max-width:var(--max);margin:0 auto}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand__mark{width:34px;height:34px;flex:none}
-.brand__txt{display:flex;align-items:baseline;gap:8px;line-height:1.05;white-space:nowrap}
+.brand__txt{display:flex;flex-direction:column;line-height:1.05;white-space:nowrap}
 .brand__name{font-family:var(--font-display);font-weight:700;font-size:1.02rem;color:var(--on-dark);letter-spacing:.01em}
-.brand__sub{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;color:var(--flare);text-transform:uppercase}
+.brand__sub{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.22em;color:var(--flare);text-transform:uppercase}
 .hdr__cta{display:flex;align-items:center;gap:12px}
 .hdr__phone{display:inline-flex;align-items:center;gap:7px;color:var(--on-dark);text-decoration:none;font-weight:600;font-size:.95rem;white-space:nowrap;flex:none}
 .hdr__phone span{white-space:nowrap}
