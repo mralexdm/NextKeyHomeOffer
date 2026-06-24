@@ -28,7 +28,7 @@ export const site = {
   // total once confirmed. Never inflate beyond what's displayed.
   rating: { value: '5.0', count: 9 }, // TODO confirm true Google review count
   // Google Business Profile share-embed URL (GBP → Share → Embed a map).
-  gbpEmbedSrc: '', // TODO paste the iframe `src` from GBP
+  gbpEmbedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.5566605539084!2d-121.92551209999999!3d37.494787099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x44bbfa0c32fd2361%3A0xc7fce67a76f129ca!2sNextKey%20Home%20Offer%20%7C%20Sell%20My%20House%20Fast!5e0!3m2!1sen!2sus!4v1782341578560!5m2!1sen!2sus',
   ads: {
     id: 'AW-18257642937',
     conversions: {
