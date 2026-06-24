@@ -1,0 +1,32 @@
+---
+import { reviews as defaultReviews } from '../data/reviews.js';
+import { site } from '../data/site.js';
+const {
+  reviews = defaultReviews,
+  eyebrow = 'Reviews',
+  heading = 'Bay Area sellers trust NextKey',
+  sub = 'Real seller feedback from people who wanted a simpler way to sell.',
+} = Astro.props;
+---
+<div class="review-head">
+  <div class="sec-head">
+    <span class="eyebrow">{eyebrow}</span>
+    <h2>{heading}</h2>
+    <p>{sub}</p>
+  </div>
+  <div class="review-score" aria-label={`${site.rating.value} average rating on Google`}>
+    <span class="review-score__stars" aria-hidden="true">★★★★★</span>
+    <span>{site.rating.value}</span>
+    <span class="review-score__meta">average rating on Google</span>
+  </div>
+</div>
+<div class="review-grid" data-review-grid>
+  {reviews.map((r, i) => (
+    <article class={`review-card${i < 3 ? ' is-active' : ''}`}>
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <p>"{r.body}"</p>
+      <cite>{r.author}</cite>
+    </article>
+  ))}
+</div>
+<div class="review-dots" data-review-dots aria-label="Review slides"></div>

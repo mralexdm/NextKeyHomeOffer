@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import OfferBand from '../components/OfferBand.astro';
+import MapEmbed from '../components/MapEmbed.astro';
+import { site, cities } from '../data/site.js';
+import { cityItemListSchema } from '../lib/schema.js';
+
+const title = 'Areas We Serve | Cash Home Buyers in Fremont & the East Bay';
+const description = 'NextKey Home Offer buys houses for cash across Fremont, Newark, Union City, Hayward and the wider East Bay. See the cities we cover and get an offer fast.';
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Areas We Serve', path: '/areas-we-serve' },
+];
+
+// One-line local hook per launch city.
+const cityHooks = {
+  fremont: 'Our home base. We buy across Niles, Irvington, Centerville, Mission San Jose, Ardenwood and Warm Springs.',
+  newark: 'A short drive from our Fremont office. Cash offers on Newark homes in any condition, on your timeline.',
+  'union-city': 'From the Decoto and Alvarado neighborhoods to the hills, we buy Union City houses as-is for cash.',
+  hayward: 'Hayward, the Hayward Hills and Cherryland. No repairs, no listing, no commissions — just a fair cash offer.',
+};
+---
+<Base title={title} description={description}
+  schema={[cityItemListSchema(cities)]}
+  ogTitle="Areas We Serve — Cash Home Buyers Across Fremont & the East Bay"
+  ogDescription="See the Fremont, Newark, Union City and Hayward neighborhoods where NextKey buys houses for cash, plus the wider East Bay and South Bay we cover.">
+
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Where we buy · Fremont &amp; the East Bay</span>
+      <h1>Areas We Serve — Cash Home Buyers Across Fremont &amp; the East Bay</h1>
+      <p>NextKey Home Offer is based in Fremont and buys houses for cash throughout the East Bay and South Bay. Pick your city below, or just send your address — wherever you are in the Bay Area, it is worth a call.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- CITY CARDS -->
+  <section class="band band--cream" id="cities">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The cities we cover</span>
+        <h2>Local cash buyers, neighborhood by neighborhood</h2>
+        <p>We are not an out-of-town iBuyer running an algorithm. We live and work here, we know what East Bay homes are worth, and we buy with our own funds. Choose your city for details made for your area.</p>
+      </div>
+      <div class="local-grid">
+        {cities.map((c) => (
+          <article class="local-card">
+            <h3>{c.name}</h3>
+            <p>{cityHooks[c.slug]}</p>
+            <p style="margin-top:12px"><a href={`/areas-we-serve/${c.slug}`}>See {c.name} &rarr;</a></p>
+          </article>
+        ))}
+      </div>
+      <p class="sits-note">Each city page covers the same promise: a real cash offer in about 24 hours, no fees or commissions, sell as-is, and you pick the closing date. Want the steps first? <a href="/how-it-works">See how it works &rarr;</a> or jump straight to <a href="/sell-my-house-fast">selling your house fast &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- WIDER COVERAGE -->
+  <section class="band band--surface" id="coverage">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>Our wider Bay Area service area</h2>
+          <p>Fremont is our home base, and we buy in every part of the city. That includes <strong>Niles, Irvington, Centerville, Mission San Jose, Ardenwood</strong> and <strong>Warm Springs</strong>, plus the newer neighborhoods along the BART line. No matter the district, the condition, or the situation, we will take a look and make you a straight cash offer.</p>
+          <p>Our core launch cities each have their own page — <a href="/areas-we-serve/fremont">Fremont</a>, <a href="/areas-we-serve/newark">Newark</a>, <a href="/areas-we-serve/union-city">Union City</a> and <a href="/areas-we-serve/hayward">Hayward</a> — but our reach does not stop there. Because we are a short drive from most of the inner Bay, we regularly buy houses in:</p>
+          <ul>
+            <li><strong>Milpitas</strong> — just over the Alameda–Santa Clara county line, off 880 and 237.</li>
+            <li><strong>San Leandro</strong> and <strong>Castro Valley</strong> in the central East Bay.</li>
+            <li><strong>San Jose</strong> and <strong>Oakland</strong> for sellers across the South Bay and inner East Bay.</li>
+          </ul>
+          <p>Not sure if you are in our area? Just ask. Send your address and we will tell you straight whether we can help — and if a neighbor or referral is a better fit, we will say so. There is never any obligation or pressure.</p>
+          <p>NextKey is a local cash buyer, not a brokerage, and we do not give legal or tax advice. We close at a reputable local title company, and proof of funds is available any time you ask.</p>
+          <div class="linkrow">
+            <a href="/sell-my-house-fast">Sell my house fast</a>
+            <a href="/how-it-works">See our 3-step process</a>
+            <a href="/contact">Ask if we cover your area</a>
+          </div>
+        </div>
+        <aside class="aside-card">
+          <h3>Not sure you are in our area?</h3>
+          <p>If your house is anywhere in the East Bay or South Bay, it is worth a quick call. Tell us the address and we will let you know — no obligation, no pressure.</p>
+          <a class="btn btn--primary btn--block" href={site.phoneHref} data-track="call">Call {site.phone}</a>
+          <a class="btn btn--ghost btn--block" href={site.smsHref} data-track="text" style="margin-top:12px">Text us your address</a>
+          <a class="btn btn--ghost btn--block" href="#offer" style="margin-top:12px">Get my cash offer</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="band band--cream" id="map">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Find us</span>
+        <h2>Based in Fremont, buying across the Bay Area</h2>
+        <p>NextKey Home Offer is local. We are a short drive from Newark, Union City, Hayward and Milpitas, and we are happy to meet you at the property.</p>
+      </div>
+      <MapEmbed title="NextKey Home Offer — Fremont, CA" />
+    </div>
+  </section>
+
+  <OfferBand source="NextKey Site - Areas We Serve" />
+</Base>

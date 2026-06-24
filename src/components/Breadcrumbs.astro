@@ -1,0 +1,19 @@
+---
+import { breadcrumbSchema } from '../lib/schema.js';
+import Schema from './Schema.astro';
+// items: [{ name, path }] — last item is the current page.
+const { items } = Astro.props;
+---
+<nav class="crumbs" aria-label="Breadcrumb">
+  <div class="crumbs__in">
+    {items.map((it, i) => (
+      <Fragment>
+        {i > 0 && <span class="crumbs__sep">/</span>}
+        {i < items.length - 1
+          ? <a href={it.path}>{it.name}</a>
+          : <span aria-current="page">{it.name}</span>}
+      </Fragment>
+    ))}
+  </div>
+</nav>
+<Schema schema={breadcrumbSchema(items)} />

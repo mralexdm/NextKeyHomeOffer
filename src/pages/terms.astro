@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site.js';
+---
+<Base title="Terms of Use | NextKey Home Offer" description="The terms that govern your use of the NextKey Home Offer website." offerHref="/#offer">
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Legal</span>
+      <h1>Terms of Use</h1>
+      <p class="upd" style="color:var(--muted-dark);font-family:var(--font-mono);font-size:.9rem;margin-top:10px">Last updated: June 2026</p>
+    </div>
+  </section>
+
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="prose">
+        <p>By using this website, you agree to these terms. If you do not agree, please do not use the site.</p>
+
+        <h2>Who we are</h2>
+        <p>{site.name} is a local home-buying company based in {site.address.locality}, {site.address.region}. We buy houses directly as a principal buyer. We are not a licensed real estate brokerage, and we do not provide real estate, legal, financial, or tax advice. You should consult your own advisors before selling.</p>
+
+        <h2>No guarantee of an offer</h2>
+        <p>Submitting the form is a request for a cash offer, not a binding agreement. We review each property individually and may decline to make an offer. Any offer we present is made in writing, is subject to its stated terms, and carries no obligation for you to accept.</p>
+
+        <h2>Offers, fees, and timelines</h2>
+        <p>We charge no fees or commissions to sellers. Cash offer amounts are based on the property's condition, location, and recent comparable sales. Closing timelines, including any reference to closing in as few as 7 days, depend on title status, escrow, and property specifics, and are estimates rather than promises.</p>
+
+        <h2>Accuracy of information</h2>
+        <p>You agree that the information you provide about yourself and the property is accurate to the best of your knowledge. Website content is provided for general information and may change without notice.</p>
+
+        <h2>Limitation of liability</h2>
+        <p>To the fullest extent allowed by law, NextKey is not liable for any indirect or consequential damages arising from your use of this website.</p>
+
+        <h2>Contact</h2>
+        <p>{site.name} · {site.address.locality}, {site.address.region} · {site.phone}</p>
+      </div>
+    </div>
+  </section>
+</Base>

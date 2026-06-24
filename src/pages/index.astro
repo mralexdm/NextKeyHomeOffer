@@ -1,0 +1,221 @@
+---
+import Base from '../layouts/Base.astro';
+import LeadForm from '../components/LeadForm.astro';
+import Reviews from '../components/Reviews.astro';
+import { coreFaqs } from '../data/faqs.js';
+import { faqSchema } from '../lib/schema.js';
+import { site } from '../data/site.js';
+
+const title = 'Sell Your House Fast in Fremont & the Bay Area | Cash Offer in 24 Hours | NextKey Home Offer';
+const description = 'We buy houses for cash in Fremont and the Bay Area. Get a fair cash offer in 24 hours. No agent fees, no commissions, no repairs, no showings. You pick the closing date. Call or text (408) 314-4420.';
+---
+<Base title={title} description={description} schema={[faqSchema(coreFaqs)]}
+  ogTitle="Sell Your Bay Area House Fast: Cash Offer in 24 Hours | NextKey Home Offer"
+  ogDescription="We buy houses for cash across Fremont and the East Bay. No fees, no commissions, no repairs. You pick the closing date.">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__in">
+      <div class="hero__copy">
+        <div class="google-rating" aria-label="5-star rating on Google">
+          <span class="google-rating__stars" aria-hidden="true">★★★★★</span>
+          <span class="google-rating__text">5-star rating on <span class="google-wordmark" aria-label="Google"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span></span>
+        </div>
+        <span class="eyebrow hero__eyebrow">Fremont &amp; the Bay Area · Cash Home Buyers</span>
+        <h1>Sell your Fremont house fast. Get a <em>free</em> cash offer in <em>24 hours</em>.</h1>
+        <p class="hero__sub">We buy houses across Fremont, the South Bay, and the East Bay. No agent fees, no commissions, no repairs, no showings. You pick the closing date.</p>
+        <div class="chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Cash offer in 24 hrs</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>No fees or commissions</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Sell as-is</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>You pick the close date</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>White-glove service</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Transition support</span>
+        </div>
+      </div>
+      <LeadForm source="NextKey Site - Home" />
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="strip" role="group" aria-label="Why sellers trust NextKey">
+    <div class="strip__in">
+      <span class="strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><polyline points="9 11.5 11.5 14 15.5 9.5"/></svg>Proof of funds on request</span>
+      <span class="strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Locally owned, Fremont</span>
+      <span class="strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>No agent fees or commissions</span>
+      <span class="strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 15 11 17 15 13"/></svg>Close in as few as 7 days</span>
+    </div>
+  </div>
+
+  <!-- BENEFITS -->
+  <section class="band band--cream" id="why-cash">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Why sell to NextKey</span>
+        <h2>Skip the agents, the commissions, and the closing costs.</h2>
+        <p>Listing a house in the Bay Area means stressful repairs, showings, inspections, and up to <span style="color:var(--ember);font-weight:600;">8 percent commissions</span>. We skip it all and pay cash. <a href="/sell-my-house-fast" style="color:var(--rust);font-weight:600;">See how selling fast works &rarr;</a></p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg></div>
+          <h3>A real cash offer</h3>
+          <p>Our offer is cash, so there is no bank, no appraisal, and no deal falling through at the last minute.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>Zero fees or commissions</h3>
+          <p>You keep the full offer. No agent's 6 percent, no closing costs, and no surprise line items.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>Sell exactly as-is</h3>
+          <p>Old roof, tenants still inside, a garage full of stuff. Leave it. We handle the cleanup and repairs. <a href="/sell-house-as-is" style="color:var(--rust);font-weight:600;">As-is selling &rarr;</a></p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <h3>You set the closing date</h3>
+          <p>Need to close in a week? Done. Need 90 days to find your next place? Also done.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10 10 0 0 1 12 20c-7 0-11-8-11-8a18.5 18.5 0 0 1 5.06-5.94M9.9 4.24A9 9 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
+          <h3>No showings, ever</h3>
+          <p>No open houses. No strangers walking through your kitchen. No lockbox on the door.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h3>We know Bay Area values</h3>
+          <p>We live here, we buy here, and we know what Bay Area homes are worth. We make a fair offer.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="band band--dark" id="how-it-works">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">How it works</span>
+        <h2>Three steps. No realtor required.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__n">Step 01</div>
+          <h3>Tell us about your house</h3>
+          <p>Share the address and a few details by form, phone, or text. It takes about two minutes.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 02</div>
+          <h3>Get your cash offer in 24 hours</h3>
+          <p>We review recent Bay Area sales and send a real, no-obligation cash offer, typically within 24 hours.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 03</div>
+          <h3>Pick your date and get paid</h3>
+          <p>Choose any closing date that works. We close at a local title company and you walk away with cash.</p>
+        </div>
+      </div>
+      <div class="steps-cta"><a class="btn btn--primary btn--lg" href="#offer">Start with your address</a> <a class="btn btn--ghost btn--lg" href="/how-it-works">See the full process</a></div>
+    </div>
+  </section>
+
+  <!-- SITUATIONS -->
+  <section class="band band--cream" id="seller-situations">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Situations we buy through</span>
+        <h2>Whatever the situation, we have bought through it</h2>
+        <p>People call us when listing with an agent isn't an option. Maybe there's no time, no money for repairs, or you're just done with the hassle.</p>
+      </div>
+      <div class="sits">
+        <a class="sit" href="/sell-inherited-house"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Inherited or probate</a>
+        <a class="sit" href="/stop-foreclosure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Facing foreclosure</a>
+        <div class="sit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Relocating fast</div>
+        <div class="sit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Tired of tenants</div>
+        <div class="sit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-8.5A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6.5C19 16.65 12 21 12 21z"/><line x1="3" y1="3" x2="21" y2="21"/></svg>Going through divorce</div>
+        <a class="sit" href="/sell-house-as-is"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>House needs repairs</a>
+        <div class="sit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Behind on payments</div>
+        <div class="sit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><line x1="3" y1="14" x2="21" y2="14"/></svg>Vacant property</div>
+      </div>
+      <p class="sits-note">Don't see yours? <a href={site.phoneHref} data-track="call">Call us anyway at {site.phone}</a>. We have probably bought through it before. Or <a href="/why-sell">see why sellers choose us</a>.</p>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="band band--surface" id="transition-support">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">What to expect</span>
+        <h2>What you can count on</h2>
+        <p>Straight talk and real proof, starting on the first call.</p>
+      </div>
+      <div class="grid grid--2">
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
+          <h3>A written cash offer</h3>
+          <p>You get your number in writing with no obligation. Accept it, sit on it, or walk away. We don't chase you.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18 9l-4.1 1.4L12 15l-1.9-4.6L6 9l4.1-1.4z"/><path d="M5 15l.8 2.2L8 18l-2.2.8L5 21l-.8-2.2L2 18l2.2-.8z"/></svg></div>
+          <h3>White-glove service</h3>
+          <p>From the first call to the closing table, one team handles the details. You get a single point of contact, not a runaround.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.3 9 5.1"/><path d="M21 8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
+          <h3>Transition resources</h3>
+          <p>Need movers, storage, or help finding your next place? We point you to our trusted local resources so your move is handled with care.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="22" x2="21" y2="22"/><polygon points="12 2 21 7 3 7"/><line x1="5" y1="10" x2="5" y2="18"/><line x1="10" y1="10" x2="10" y2="18"/><line x1="14" y1="10" x2="14" y2="18"/><line x1="19" y1="10" x2="19" y2="18"/></svg></div>
+          <h3>A local title-company closing</h3>
+          <p>We close at a reputable Bay Area title company, so a licensed professional handles the paperwork and the money is real.</p>
+        </article>
+      </div>
+      <p class="sits-note">Every offer is no-obligation. Closing timelines vary by property and title.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="band band--cream" id="reviews">
+    <div class="wrap">
+      <Reviews />
+      <p class="sits-note" style="text-align:center"><a href="/testimonials">Read more seller stories &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- REPEATED CTA -->
+  <section class="band band--dark ctaband">
+    <div class="wrap">
+      <div class="ctaband__in">
+        <h2>See your cash offer in 24 hours</h2>
+        <p>No fee, no obligation, no pressure. Most offers go out within one business day. Get your number and decide on your own time.</p>
+        <div class="ctaband__row">
+          <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+          <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Call or text {site.phone}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band band--cream" id="faq">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Questions sellers ask</span>
+        <h2>Straight answers, no runaround</h2>
+      </div>
+      <div class="faq">
+        {coreFaqs.map((f, i) => (
+          <details open={i === 0}>
+            <summary>{f.q}<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+      <p class="sits-note" style="text-align:center"><a href="/faq">See all frequently asked questions &rarr;</a></p>
+    </div>
+  </section>
+
+</Base>

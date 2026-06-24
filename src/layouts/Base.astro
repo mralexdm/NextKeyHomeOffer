@@ -1,0 +1,196 @@
+---
+import { site } from '../data/site.js';
+import { businessSchema, websiteSchema } from '../lib/schema.js';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileBar from '../components/MobileBar.astro';
+import Schema from '../components/Schema.astro';
+import '../styles/global.css';
+
+const {
+  title,
+  description,
+  schema = [],
+  offerHref = '#offer',
+  ogTitle,
+  ogDescription,
+  noindex = false,
+} = Astro.props;
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const canonical = path === '/' ? `${site.url}/` : `${site.url}${path}`;
+const pageSchema = Array.isArray(schema) ? schema : [schema];
+const globalSchema = [businessSchema(), websiteSchema()];
+const ogImage = `${site.url}/og.jpg`;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#17110C" />
+  <link rel="canonical" href={canonical} />
+  {noindex
+    ? <meta name="robots" content="noindex,follow" />
+    : <meta name="robots" content="index,follow" />}
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={ogTitle || title} />
+  <meta property="og:description" content={ogDescription || description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2317110C'/%3E%3Cpath d='M11 9a4 4 0 1 0 3.6 5.7l2.2 2.2-1.4 1.4 1.6 1.6 1.4-1.4 1.5 1.5 2-2-4.7-4.7A4 4 0 0 0 11 9zm-1 4a1.4 1.4 0 1 1 2.8 0 1.4 1.4 0 0 1-2.8 0z' fill='%23EA5A0B'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+
+  <!-- Google tag (Google Ads) — live conversion tracking -->
+  <script async src={`https://www.googletagmanager.com/gtag/js?id=${site.ads.id}`}></script>
+  <script is:inline define:vars={{ adsId: site.ads.id, nk: { ads: site.ads, endpoint: '/api/nextkey-lead' } }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', adsId);
+    window.NK = nk;
+  </script>
+
+  <Schema schema={globalSchema} />
+  <Schema schema={pageSchema} />
+</head>
+<body>
+  <Header offerHref={offerHref} />
+  <slot />
+  <Footer />
+  <MobileBar offerHref={offerHref} />
+
+  <script>
+    // ---- shared client behaviors (ported from the LP) ----
+    const NK = window.NK || {};
+    const conv = (NK.ads && NK.ads.conversions) || {};
+    const endpoint = NK.endpoint || '/api/nextkey-lead';
+
+    function fireAds(sendTo, options) {
+      if (typeof window.gtag !== 'function' || !sendTo) return;
+      window.gtag('event', 'conversion', Object.assign({ send_to: sendTo, value: 1.0, currency: 'USD' }, options || {}));
+    }
+
+    function trackAndFollow(event, sendTo) {
+      if (typeof window.gtag !== 'function' || !sendTo) return;
+      const link = event.currentTarget;
+      const url = link.getAttribute('href');
+      let followed = false;
+      const follow = () => { if (followed || !url) return; followed = true; window.location.href = url; };
+      event.preventDefault();
+      fireAds(sendTo, { event_callback: follow });
+      window.setTimeout(follow, 700);
+    }
+
+    document.querySelectorAll('[data-track="call"]').forEach((el) =>
+      el.addEventListener('click', (e) => trackAndFollow(e, conv.call)));
+    document.querySelectorAll('[data-track="text"]').forEach((el) =>
+      el.addEventListener('click', (e) => trackAndFollow(e, conv.text)));
+
+    // Land a hesitant clicker in the form: focus the address field on any "Get offer" CTA.
+    document.querySelectorAll('a[href$="#offer"]').forEach((a) =>
+      a.addEventListener('click', () => {
+        setTimeout(() => { const f = document.querySelector('#offer [name="address"]') || document.querySelector('form[data-lead-form] [name="address"]'); if (f) f.focus({ preventScroll: true }); }, 420);
+      }));
+
+    // Review carousel (only runs where a review grid exists).
+    (function () {
+      const cards = Array.prototype.slice.call(document.querySelectorAll('.review-card'));
+      const dotsWrap = document.querySelector('[data-review-dots]');
+      if (!cards.length || !dotsWrap) return;
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const mobileQuery = window.matchMedia ? window.matchMedia('(max-width: 768px)') : null;
+      let current = 0;
+      let timer;
+      const visibleCount = () => (mobileQuery && mobileQuery.matches ? 1 : 3);
+      const pageCount = () => Math.ceil(cards.length / visibleCount());
+      function renderDots() {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pageCount(); i += 1) {
+          const dot = document.createElement('button');
+          dot.className = 'review-dot';
+          dot.type = 'button';
+          dot.setAttribute('aria-label', 'Show review group ' + (i + 1));
+          dot.dataset.index = String(i);
+          dotsWrap.appendChild(dot);
+        }
+      }
+      function show(page) {
+        const count = visibleCount();
+        const total = pageCount();
+        current = ((page % total) + total) % total;
+        cards.forEach((card, index) => {
+          const isActive = index >= current * count && index < current * count + count;
+          card.classList.toggle('is-active', isActive);
+        });
+        Array.prototype.slice.call(dotsWrap.children).forEach((dot, index) => {
+          dot.classList.toggle('is-active', index === current);
+          dot.setAttribute('aria-current', index === current ? 'true' : 'false');
+        });
+      }
+      function restart() {
+        window.clearInterval(timer);
+        if (!reduceMotion) timer = window.setInterval(() => show(current + 1), 5500);
+      }
+      dotsWrap.addEventListener('click', (event) => {
+        const dot = event.target.closest('.review-dot');
+        if (!dot) return;
+        show(Number(dot.dataset.index || 0));
+        restart();
+      });
+      if (mobileQuery && mobileQuery.addEventListener) {
+        mobileQuery.addEventListener('change', () => { renderDots(); show(0); restart(); });
+      }
+      renderDots();
+      show(0);
+      restart();
+    })();
+
+    // Lead forms (supports one or many per page).
+    document.querySelectorAll('form[data-lead-form]').forEach((form) => {
+      const wrap = form.closest('.lead');
+      const ok = wrap ? wrap.querySelector('[data-lead-ok]') : null;
+      const errBox = form.querySelector('[data-lead-err]');
+      const btn = form.querySelector('button[type="submit"]');
+      const label = btn ? btn.querySelector('.btn-label') : null;
+      const setBusy = (on) => {
+        if (!btn) return;
+        btn.disabled = on;
+        if (on) { btn.setAttribute('aria-busy', 'true'); btn.classList.add('is-busy'); if (label) label.textContent = 'Sending…'; }
+        else { btn.removeAttribute('aria-busy'); btn.classList.remove('is-busy'); if (label) label.textContent = 'Get my 24-hour offer'; }
+      };
+      const showError = (msg) => { if (errBox) { errBox.textContent = msg; errBox.style.display = 'block'; } };
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (form.company && form.company.value) return; // honeypot
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        if (errBox) errBox.style.display = 'none';
+        setBusy(true);
+        const data = {
+          address: form.address.value,
+          name: form.name.value,
+          phone: form.phone.value,
+          motivation: form.motivation ? form.motivation.value : '',
+          source: form.source ? form.source.value : '',
+        };
+        const succeed = () => {
+          fireAds(conv.lead);
+          form.style.display = 'none';
+          if (ok) { ok.style.display = 'block'; if (ok.focus) ok.focus(); ok.scrollIntoView({ block: 'center' }); }
+        };
+        fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+          .then((r) => { if (!r.ok) throw new Error('bad status'); succeed(); })
+          .catch(() => { setBusy(false); showError("We couldn't send your details just now. Please call or text (408) 314-4420 and we'll get your cash offer started."); });
+      });
+    });
+  </script>
+</body>
+</html>

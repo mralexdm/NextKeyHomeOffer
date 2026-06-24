@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import LeadForm from '../components/LeadForm.astro';
+import NAP from '../components/NAP.astro';
+import MapEmbed from '../components/MapEmbed.astro';
+import { site } from '../data/site.js';
+import { contactSchema } from '../lib/schema.js';
+
+const title = 'Contact NextKey Home Offer | Fremont & Bay Area Cash Buyer';
+const description = 'Contact NextKey Home Offer for a cash offer on your Bay Area house. Call or text (408) 314-4420, email, or use the form. A real local person answers, any time.';
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Contact', path: '/contact' },
+];
+---
+<Base title={title} description={description} schema={[contactSchema()]}
+  ogTitle="Contact NextKey Home Offer — Fremont, CA"
+  ogDescription="Call or text (408) 314-4420, email, or fill out the form for a no-obligation cash offer on your Bay Area house. A real local person answers, any time.">
+
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Contact · We answer fast</span>
+      <h1>Contact NextKey Home Offer</h1>
+      <p>Have a house to sell anywhere in the Bay Area? Call or text {site.phone}, send an email, or use the form below. A real local person answers, there is no obligation, and you set the pace.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- FORM + NAP + MAP -->
+  <section class="band band--dark" id="reach-us">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Reach us your way</span>
+        <h2>Get your offer started, or just ask us a question</h2>
+        <p>Fill out the form for a written cash offer in about 24 hours, or reach us directly by phone, text, or email. However you start, you talk to a local person, not a call center.</p>
+      </div>
+      <div class="split">
+        <LeadForm source="NextKey Site - Contact" heading="Get my cash offer" sub="Tell us about your house. It takes about 2 minutes." />
+        <div>
+          <NAP heading="Talk to NextKey" />
+          <div style="margin-top:24px">
+            <MapEmbed title="NextKey Home Offer — Fremont, CA" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REASSURANCE -->
+  <section class="band band--surface" id="what-to-expect">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">What happens when you reach out</span>
+        <h2>No obligation, no pressure, and no spam</h2>
+        <p>Reaching out costs nothing and commits you to nothing. Here is exactly what you can count on the moment you call, text, or send the form.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+          <h3>A real person, any time</h3>
+          <p>We are open every day, around the clock. Call or text {site.phone} and a local person answers, not a robot and not an out-of-state call center.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg></div>
+          <h3>A written offer in ~24 hours</h3>
+          <p>Once we have your address and a few details, most offers go out within one business day in writing. We buy with our own funds, so there is no bank to wait on.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>No pressure, ever</h3>
+          <p>Accept your number, sit on it, or walk away. We do not chase you, we do not hard-sell, and we will tell you straight if selling to us is not your best move.</p>
+        </article>
+      </div>
+      <p class="sits-note">NextKey is a local cash buyer, not a brokerage, and we do not give legal or tax advice. Ask us for proof of funds any time. Standard message and data rates may apply if you text.</p>
+    </div>
+  </section>
+
+  <!-- WHERE WE BUY + LINKS -->
+  <section class="band band--cream" id="where-we-buy">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>Where we buy and how to start</h2>
+          <p>NextKey Home Offer is based in Fremont and buys houses across the East Bay and South Bay, including Newark, Union City, Hayward, Milpitas, San Leandro, Castro Valley, San Jose, and Oakland. If your house is anywhere in the Bay Area, it is worth a call.</p>
+          <p>You do not need to clean, repair, or prepare anything to talk to us. Send the address, tell us a little about your timeline and situation, and we take it from there. If you would rather see the full process before you reach out, walk through <a href="/how-it-works">how it works</a> step by step, or check whether we cover your city on the <a href="/areas-we-serve">areas we serve</a> page.</p>
+          <p>Not sure selling for cash is the right call? That is fair. Read <a href="/why-sell">why sellers choose NextKey</a> and the real <a href="/testimonials">stories from local homeowners</a>, then decide on your own terms. When you are ready, we are one call or text away.</p>
+          <div class="linkrow">
+            <a href="/how-it-works">See our 3-step process</a>
+            <a href="/areas-we-serve">Check the areas we serve</a>
+            <a href="/sell-my-house-fast">Why sellers choose cash</a>
+          </div>
+        </div>
+        <aside class="aside-card">
+          <h3>Prefer to talk right now?</h3>
+          <p>Skip the form and reach a local person directly. We are open every day, 24 hours, and there is never any obligation.</p>
+          <a class="btn btn--primary btn--block" href={site.phoneHref} data-track="call">Call {site.phone}</a>
+          <a class="btn btn--ghost btn--block" href={site.smsHref} data-track="text" style="margin-top:12px">Text {site.phone}</a>
+          <a class="btn btn--ghost btn--block" href={`mailto:${site.email}`} style="margin-top:12px">Email us</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Base>

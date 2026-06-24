@@ -1,0 +1,8 @@
+---
+// Renders one or more JSON-LD objects as <script type="application/ld+json">.
+const { schema } = Astro.props;
+const list = (Array.isArray(schema) ? schema : [schema]).filter(Boolean);
+---
+{list.map((obj) => (
+  <script type="application/ld+json" set:html={JSON.stringify(obj)} />
+))}

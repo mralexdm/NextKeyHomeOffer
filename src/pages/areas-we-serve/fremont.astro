@@ -1,0 +1,201 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import OfferBand from '../../components/OfferBand.astro';
+import MapEmbed from '../../components/MapEmbed.astro';
+import NAP from '../../components/NAP.astro';
+import { site } from '../../data/site.js';
+import { cityBusinessSchema, serviceSchema } from '../../lib/schema.js';
+
+const title = 'Sell My House Fast in Fremont, CA | NextKey Home Offer';
+const description = 'Sell your Fremont house fast for cash. NextKey buys as-is in Niles, Irvington, Mission San Jose, Warm Springs — no fees, no repairs, you pick the close date.';
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Areas We Serve', path: '/areas-we-serve' },
+  { name: 'Fremont', path: '/areas-we-serve/fremont' },
+];
+---
+<Base title={title} description={description} schema={[
+  cityBusinessSchema({ slug: 'fremont', name: 'Fremont' }),
+  serviceSchema({
+    name: 'Sell Your Fremont House As-Is for Cash',
+    description: 'We buy houses in Fremont, CA as-is for cash — no repairs, no fees — and close on your timeline.',
+    areaServedName: 'Fremont, CA',
+    areaServedType: 'City',
+  }),
+]}
+  ogTitle="Sell My House Fast in Fremont, CA — NextKey Home Offer"
+  ogDescription="Cash offer in about 24 hours on any Fremont house, as-is. No fees, no commissions, no repairs. You pick the closing date. Call or text (408) 314-4420.">
+
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Fremont, CA · Our home base</span>
+      <h1>Sell My House Fast in Fremont, CA</h1>
+      <p>NextKey Home Offer is based right here in Fremont. We buy houses across the city as-is for cash — Niles to Warm Springs, an older Centerville bungalow or a newer Ardenwood build. No fees, no repairs, and you choose the closing date.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- WHY SELL IN FREMONT -->
+  <section class="band band--cream" id="why-fremont">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>Why Fremont homeowners sell to NextKey</h2>
+          <p>Fremont is the largest city in the East Bay by land area, and that shows up in the houses. You have the historic, older homes around Niles and Centerville, the established streets of Irvington, the hillside lots and top schools of Mission San Jose, and the newer builds out in Ardenwood and Warm Springs near the Tesla factory and the Warm Springs BART station. Different decades, different conditions, the same simple offer from us.</p>
+          <p>A lot of longtime owners here are sitting on real equity but facing a real headache: a roof or foundation that needs work, an inherited or probate house no one local can manage, or a property that has been rented for years and is tired. Listing it the traditional way means repairs, showings, and waiting on a buyer's loan. We skip all of that. <strong>We buy with our own funds. No lowball, no listing, no spam.</strong></p>
+          <p>Because we are local, we know what a Fremont commute is worth — the easy reach to I-880 and I-680 and the run down to Silicon Valley — and we price honestly against recent sales near you, not a national formula. You get a written, no-obligation cash offer in about 24 hours, and we can close at a local title company in as few as 7 days, or whenever suits you. Want the full walkthrough first? See exactly <a href="/how-it-works">how it works</a>.</p>
+          <div class="linkrow">
+            <a href="/sell-house-as-is">Sell a Fremont house as-is</a>
+            <a href="/how-it-works">See the 3-step process</a>
+            <a href="/why-sell">Why sellers choose cash</a>
+          </div>
+        </div>
+        <aside class="aside-card">
+          <h3>A straight cash offer on your Fremont home</h3>
+          <p>Tell us the address and a little about the house. There is nothing to clean, fix, or stage, and there is never any obligation.</p>
+          <a class="btn btn--primary btn--block" href="#offer">Get my cash offer</a>
+          <a class="btn btn--ghost btn--block" href={site.phoneHref} data-track="call" style="margin-top:12px">Call {site.phone}</a>
+          <a class="btn btn--ghost btn--block" href={site.smsHref} data-track="text" style="margin-top:12px">Text {site.phone}</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOODS -->
+  <section class="band band--surface" id="neighborhoods">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Where we buy in Fremont</span>
+        <h2>Every Fremont neighborhood, every kind of house</h2>
+        <p>From Niles Canyon to the Warm Springs hills, we buy across the whole city. Here is a quick read on the areas we know best.</p>
+      </div>
+      <div class="local-grid">
+        <article class="local-card">
+          <h3>Niles</h3>
+          <p>Historic district by Niles Canyon with older, character homes. Charm and original detail, but often original wiring, plumbing, and foundations too. We buy them as-is.</p>
+        </article>
+        <article class="local-card">
+          <h3>Centerville</h3>
+          <p>One of Fremont's oldest pockets, full of mid-century houses and longtime owners. Many need updates after decades — no problem, we take them in any condition.</p>
+        </article>
+        <article class="local-card">
+          <h3>Irvington</h3>
+          <p>Central, established Fremont near the historic Irvington district. A common spot for inherited and probate homes that families would rather sell quickly than fix up.</p>
+        </article>
+        <article class="local-card">
+          <h3>Mission San Jose</h3>
+          <p>Hillside lots and some of the area's top schools. Larger, higher-value homes where owners still want a clean, fast sale without months of showings.</p>
+        </article>
+        <article class="local-card">
+          <h3>Ardenwood</h3>
+          <p>Newer, planned neighborhoods near Coyote Hills on the west side. Even well-kept homes here get sold fast for cash when a job, a move, or a life change calls for it.</p>
+        </article>
+        <article class="local-card">
+          <h3>Warm Springs / South Fremont</h3>
+          <p>Newer construction near the Tesla factory and the Warm Springs BART station. Great for commuters — and an easy, certain sale when you need to relocate on short notice.</p>
+        </article>
+      </div>
+      <p class="sits-note">Closer to Lake Elizabeth and Central Park, out toward Mission Peak, or anywhere in between — if it is in Fremont, we will make you an offer.</p>
+      <div class="tag-row" style="justify-content:center;margin-top:18px">
+        <span class="tag">94536</span>
+        <span class="tag">94537</span>
+        <span class="tag">94538</span>
+        <span class="tag">94539</span>
+        <span class="tag">94555</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL PROOF -->
+  <section class="band band--cream" id="local-proof">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">A Fremont seller's story</span>
+        <h2>What a local homeowner said</h2>
+        <p>Real feedback from a Fremont sale. We help with the move and let you leave behind whatever you do not want.</p>
+      </div>
+      <div class="quotes">
+        <article class="quote">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"Made selling our house in Fremont super easy. They bought it as-is and let us leave behind whatever we didn't want."</p>
+          <cite>Sam H · Fremont</cite>
+        </article>
+        <article class="quote">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"We were helping our parents sell their older home in Fremont and didn't know where to start. NextKey made everything simple and stress free."</p>
+          <cite>Marybeth Garza · Fremont</cite>
+        </article>
+      </div>
+      <p class="sits-note" style="text-align:center"><a href="/testimonials">Read more seller stories &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS RECAP -->
+  <section class="band band--dark" id="how-it-works">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Selling in Fremont, step by step</span>
+        <h2>Three steps from your address to cash</h2>
+        <p>No agents, no repairs, no guesswork. Here is the whole process.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__n">Step 01</div>
+          <h3>Tell us about your Fremont house</h3>
+          <p>Send the address and a few quick details by form, phone, or text. Rough condition, whether anyone is living there, your timeline — that is it. Nothing to clean or fix. It takes about two minutes and puts you under no obligation.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 02</div>
+          <h3>Get your cash offer in about 24 hours</h3>
+          <p>We look at recent sales near you in Fremont and the condition of your home, then send a fair cash number in writing — usually within one business day. We buy with our own funds, so there is no bank, no appraisal, and no financing to fall through. Ask for proof of funds any time.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 03</div>
+          <h3>Pick your date and get paid</h3>
+          <p>If the number works, you choose the closing date. Need out in a week? We can close in as few as 7 days. Need 60 days to line up your next place? That works too. We close at a reputable local title company — no fees, no commissions.</p>
+        </div>
+      </div>
+      <div class="steps-cta"><a class="btn btn--primary btn--lg" href="#offer">Start with your address</a> <a class="btn btn--ghost btn--lg" href="/how-it-works">See the full process</a></div>
+    </div>
+  </section>
+
+  <!-- MAP + NAP -->
+  <section class="band band--surface" id="find-us">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Local to Fremont</span>
+        <h2>A real Bay Area buyer, not a call center</h2>
+        <p>We are based in Fremont and open every day, around the clock. Reach a local person whenever you are ready.</p>
+      </div>
+      <div class="split">
+        <MapEmbed title="NextKey Home Offer — Fremont, CA" />
+        <NAP heading="Talk to NextKey in Fremont" />
+      </div>
+    </div>
+  </section>
+
+  <!-- NEARBY CITIES -->
+  <section class="band band--cream" id="nearby">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Nearby cities we buy in</span>
+        <h2>Selling outside Fremont?</h2>
+        <p>We buy across the East Bay. If your house is in one of these neighboring cities, start there instead.</p>
+      </div>
+      <div class="linkrow">
+        <a href="/areas-we-serve/newark">Sell a house in Newark</a>
+        <a href="/areas-we-serve/union-city">Sell a house in Union City</a>
+        <a href="/areas-we-serve/hayward">Sell a house in Hayward</a>
+        <a href="/areas-we-serve">See all areas we serve</a>
+      </div>
+    </div>
+  </section>
+
+  <OfferBand source="NextKey Site - Fremont" />
+</Base>

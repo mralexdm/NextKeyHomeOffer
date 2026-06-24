@@ -1,0 +1,50 @@
+---
+import { site } from '../data/site.js';
+// Reusable cash-offer form. Posts JSON to /api/nextkey-lead (honeypot +
+// validation + success/error handled by the shared behaviors script in Base).
+// `source` differentiates this surface in GHL for attribution.
+// Field ids are scoped to `id` so a page can safely render more than one form.
+const {
+  id = 'offer',
+  heading = 'Get my cash offer',
+  sub = 'No obligation. Takes about 2 minutes.',
+  source = 'NextKey Site',
+} = Astro.props;
+const fid = (n) => `${id}-${n}`;
+---
+<div class="lead" id={id}>
+  <form data-lead-form novalidate>
+    <input type="hidden" name="source" value={source} />
+    <h2 class="lead__h">{heading}</h2>
+    <p class="lead__sub">{sub}</p>
+    <div class="field">
+      <label for={fid('address')}>Property address</label>
+      <input id={fid('address')} name="address" type="text" placeholder="123 Main St, Fremont, CA" autocomplete="street-address" required />
+    </div>
+    <div class="field">
+      <label for={fid('name')}>Your name</label>
+      <input id={fid('name')} name="name" type="text" placeholder="First and last name" autocomplete="name" required />
+    </div>
+    <div class="field">
+      <label for={fid('phone')}>Phone number</label>
+      <input id={fid('phone')} name="phone" type="tel" placeholder="(408) 000-0000" autocomplete="tel" inputmode="tel" required />
+    </div>
+    <div class="field">
+      <label for={fid('motivation')}>What's making you consider selling?</label>
+      <textarea id={fid('motivation')} name="motivation" placeholder="Tell us a little about your timeline, situation, or what you need help with." autocomplete="off"></textarea>
+    </div>
+    <input class="hp" type="text" name="company" id={fid('company')} tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <button class="btn btn--primary btn--block btn--lg" type="submit">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      <span class="btn-label">Get my 24-hour offer</span>
+    </button>
+    <p class="lead__err" data-lead-err role="alert" aria-live="assertive"></p>
+    <p class="lead__fine">By clicking "Get my 24-hour offer," you agree {site.name} may call and text you (including by automated or prerecorded means) about your property at the number you provide. Consent is not a condition of any sale. Message and data rates may apply; reply STOP to opt out. See our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms</a>.</p>
+    <p class="lead__trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> We buy with our own funds. No lowball, no listing, no spam.</p>
+  </form>
+  <div class="formok" data-lead-ok role="status" aria-live="polite" tabindex="-1">
+    <svg class="ok-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <h3>You're all set.</h3>
+    <p>We'll reach out fast to confirm a few details and send your written cash offer by text. Prefer to talk now? Call or text <a href={site.phoneHref} data-track="call" style="color:var(--flare)">{site.phone}</a>.</p>
+  </div>
+</div>

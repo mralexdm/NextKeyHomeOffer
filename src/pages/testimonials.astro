@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import OfferBand from '../components/OfferBand.astro';
+import { site } from '../data/site.js';
+import { reviews } from '../data/reviews.js';
+import { reviewsSchema } from '../lib/schema.js';
+
+const title = 'Testimonials & Reviews | NextKey Home Offer Bay Area';
+const description = 'Read what Fremont and Bay Area sellers say about NextKey Home Offer. A 5.0 average rating on Google from homeowners who sold as-is for cash, with no fees and no pressure.';
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Testimonials', path: '/testimonials' },
+];
+---
+<Base title={title} description={description} schema={[reviewsSchema()]}>
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Reviews · 5.0 on Google</span>
+      <h1>What Bay Area Sellers Say About NextKey</h1>
+      <p>Selling a home is personal. Here is what real homeowners across Fremont, Newark, San Jose, and the East Bay had to say after working with us, with a {site.rating.value} average rating on Google.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- ALL REVIEWS -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="review-head">
+        <div class="sec-head">
+          <span class="eyebrow">Seller stories</span>
+          <h2>Real feedback from real homeowners</h2>
+          <p>Every review below comes from a homeowner we actually worked with. Nothing here is bought, scripted, or invented. We let the sellers speak for themselves.</p>
+        </div>
+        <div class="review-score" aria-label={`${site.rating.value} average rating on Google`}>
+          <span class="review-score__stars" aria-hidden="true">★★★★★</span>
+          <span>{site.rating.value}</span>
+          <span class="review-score__meta">average rating on Google</span>
+        </div>
+      </div>
+      <div class="quotes">
+        {reviews.map((r) => (
+          <article class="quote">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>"{r.body}"</p>
+            <cite>{r.author}{r.city ? ` · ${r.city}` : ''}</cite>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SELLERS TRUST US -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Why sellers trust us</span>
+        <h2>The reason sellers feel good leaving us a five-star review</h2>
+        <p>The pattern in these reviews is the same one we hear on every call. Sellers want a straight answer, a fair number, and a process that respects their time.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
+          <h3>A real, written offer</h3>
+          <p>We buy with our own funds. No lowball, no listing, no spam. You get a number in writing with no obligation to take it.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>We buy as-is</h3>
+          <p>Old roof, repairs you cannot face, a garage full of things to leave behind. Sellers thank us for taking the house exactly as it stands.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18 9l-4.1 1.4L12 15l-1.9-4.6L6 9l4.1-1.4z"/><path d="M5 15l.8 2.2L8 18l-2.2.8L5 21l-.8-2.2L2 18l2.2-.8z"/></svg></div>
+          <h3>White-glove care</h3>
+          <p>The reviews mention storage, moving help, and patience for a reason. We help with the move and point sellers to trusted local resources.</p>
+        </article>
+      </div>
+      <div class="linkrow">
+        <a href="/about-us">Meet the local team behind NextKey</a>
+        <a href="/sell-my-house-fast">See how selling fast works</a>
+        <a href="/how-it-works">Walk through our 3-step process</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERIFY -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>How we keep these reviews honest</h2>
+          <p>It is easy to fake a testimonial. We would rather earn your trust the slow way. Every quote on this page comes from a homeowner who actually sold to us, and our {site.rating.value} rating reflects the {site.rating.count} reviews shown here, not an inflated count.</p>
+          <p>Many sellers came to us during a hard moment. An inherited home with a lot to sort out. A house in need of repairs they could not take on. A move that needed to happen quickly. What they share in common is that they wanted a simpler, more human way to sell, and that is what we set out to give them.</p>
+          <p>When you call, you can ask for the same things these sellers got. <a href="/contact">Talk with us</a>, ask for proof of funds, and take your time. We will not pressure you. If you want to understand the trade-offs first, read <a href="/why-sell">why sellers choose NextKey</a> and decide on your own terms.</p>
+        </div>
+        <aside class="aside-card">
+          <h3>Ready to see your number?</h3>
+          <p>Tell us about your house and get a real cash offer in about 24 hours. No fee, no obligation, no pressure.</p>
+          <p>Prefer to talk it through first? Call or text us and we will walk you through it.</p>
+          <a class="btn btn--primary btn--block" href="#offer">Get my cash offer</a>
+          <a class="btn btn--ghost btn--block" href={site.smsHref} data-track="text" style="margin-top:12px">Text {site.phone}</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <OfferBand source="NextKey Site - Testimonials" />
+</Base>

@@ -1,0 +1,184 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import OfferBand from '../components/OfferBand.astro';
+import { serviceSchema } from '../lib/schema.js';
+import { site } from '../data/site.js';
+
+const title = 'Stop Foreclosure: Sell Your House Fast for Cash | NextKey';
+const description = 'Behind on payments or facing foreclosure in the Bay Area? A fast cash sale can pay off your loan before the auction so you can walk away with any equity. No fees.';
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Stop Foreclosure', path: '/stop-foreclosure' },
+];
+---
+<Base title={title} description={description}
+  schema={[
+    serviceSchema({
+      name: 'Sell Before Foreclosure for Cash',
+      description: 'Behind on payments or facing foreclosure in the Bay Area? We can buy your house for cash quickly so you can move on — no fees, no repairs.',
+    }),
+  ]}
+  ogTitle="Facing Foreclosure in the Bay Area? Sell Fast for Cash"
+  ogDescription="If you are behind on payments, a quick cash sale can pay off the loan before the auction and let you walk away with any equity. No fees, no repairs, no judgment.">
+
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Foreclosure help · Bay Area</span>
+      <h1>Facing Foreclosure in the Bay Area? Sell Fast for Cash</h1>
+      <p>Falling behind on a mortgage is stressful, and the letters and deadlines make it worse. If you have equity in your home, selling before the auction is one way to pay off the loan, protect what you have built, and move on with a date you choose. No fees, no repairs, no judgment.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- HOW A CASH SALE CAN HELP -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>How a fast cash sale can stop a foreclosure</h2>
+          <p>Foreclosure is the legal process a lender uses to take back a home after the loan goes unpaid. In California it usually ends at a trustee's sale, a public auction with a set date. The key thing to understand is that the lender wants the money it is owed, not the house. As long as your home is worth more than what you owe, selling it and paying off the loan in full removes the reason for the auction.</p>
+          <p>That is where a cash buyer can help. Because we buy with our own funds, we do not wait on a bank, an appraisal, or a buyer's loan approval, which are the things that make a normal sale drag on for months. When there is equity to work with, a clean cash sale can often be arranged in the window before the sale date, the loan gets paid off through a local title company, and any money left over after the payoff and closing is yours.</p>
+          <p>Selling is not the only path, and it is not right for everyone. But for a homeowner with equity and a clock running, it can be a straightforward way to settle the debt on your own terms instead of losing the house at auction and the equity along with it.</p>
+        </div>
+        <aside class="aside-card">
+          <h3>What a sale can do</h3>
+          <ul>
+            <li>Pay off the loan before the auction date</li>
+            <li>Let you keep any equity after payoff</li>
+            <li>Skip repairs, listing, and showings</li>
+            <li>Close at a local title company</li>
+            <li>You choose the closing date</li>
+            <li>No fees and no commissions</li>
+          </ul>
+          <h3 style="margin-top:24px">Talk it through</h3>
+          <p>Not sure if you have equity or enough time? Tell us your situation and we will be straight with you. A real person answers.</p>
+          <a class="btn btn--primary btn--block" href={site.phoneHref} data-track="call">Call {site.phone}</a>
+          <a class="btn btn--ghost btn--block" href={site.smsHref} data-track="text" style="margin-top:12px">Text {site.phone}</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SPEED MATTERS -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Why speed matters</span>
+        <h2>The earlier you act, the more options you have</h2>
+        <p>Foreclosure runs on deadlines. Acting before the auction date gives you room to choose, instead of having the choice made for you.</p>
+      </div>
+      <div class="local-grid">
+        <article class="local-card">
+          <h3>Before the auction date</h3>
+          <p>Once a trustee's sale is recorded, the clock is set. Reaching out early leaves enough room to close a sale and pay off the loan before that date arrives.</p>
+        </article>
+        <article class="local-card">
+          <h3>Protect your equity</h3>
+          <p>At auction the house can sell for far less than it is worth. Selling first lets you pay the loan and keep what is left over instead of losing it.</p>
+        </article>
+        <article class="local-card">
+          <h3>No financing to fall through</h3>
+          <p>A buyer with a mortgage can take 30 to 60 days and still fall out of escrow. We use our own funds, so there is no loan that can collapse at the last minute.</p>
+        </article>
+        <article class="local-card">
+          <h3>Close on a real timeline</h3>
+          <p>When it makes sense for your situation, we can close in as few as 7 days. If you need a little more time to plan your move, we work around your date.</p>
+        </article>
+      </div>
+      <p class="sits-note">Behind on payments and not sure where to start? <a href={site.phoneHref} data-track="call">Call or text {site.phone}</a> and we will walk through your options with you, no pressure.</p>
+    </div>
+  </section>
+
+  <!-- WHAT WE NEED + PROCESS -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">What to expect</span>
+        <h2>What we need and how it works</h2>
+        <p>The process is the same simple three steps as any sale to us, just with extra care around your timeline and your loan payoff.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
+          <h3>Tell us the basics</h3>
+          <p>The address, roughly how far behind you are, and any auction or sale date you have been given. If you are not sure of the exact numbers, that is fine. We help you find them.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>Get your cash offer</h3>
+          <p>We review recent local sales and your home's condition, then send a fair, written cash offer, usually within 24 hours. We show proof of funds on request.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="22" x2="21" y2="22"/><polygon points="12 2 21 7 3 7"/><line x1="5" y1="10" x2="5" y2="18"/><line x1="10" y1="10" x2="10" y2="18"/><line x1="14" y1="10" x2="14" y2="18"/><line x1="19" y1="10" x2="19" y2="18"/></svg></div>
+          <h3>Pay off and close</h3>
+          <p>A local title company orders the payoff from your lender, the loan is cleared at closing, and any remaining funds go to you. You pick the closing date.</p>
+        </article>
+      </div>
+      <p class="sits-note">We buy as-is, so there is nothing to repair or clean. Want the full walkthrough? <a href="/sell-my-house-fast">See how selling your house fast works</a>, or read about <a href="/sell-house-as-is">selling your house as-is</a>.</p>
+    </div>
+  </section>
+
+  <!-- IMPORTANT DISCLAIMER -->
+  <section class="band band--dark">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Important — please read</span>
+        <h2>We buy houses. We are not your legal or financial advisor.</h2>
+        <p>We want you to make a clear-eyed decision, so here is the honest fine print.</p>
+      </div>
+      <div class="prose" style="max-width:60ch;margin:0 auto">
+        <p>NextKey Home Offer is a local cash home buyer. We are not a law firm, a lender, a credit counselor, or a tax advisor, and nothing on this page is legal, financial, or tax advice. We cannot and do not guarantee that a sale will stop a foreclosure in your particular situation. Outcomes depend on your loan balance, your equity, your timeline, and steps that are up to your lender and the law.</p>
+        <p>Before you decide anything, please talk to your lender or loan servicer about your account, and consider speaking with a qualified attorney or a HUD-approved housing counselor about your rights and the other options available to you. Selling is one path among several. Depending on your circumstances, a loan modification, a repayment or forbearance plan, refinancing, a short sale, or other relief may fit you better.</p>
+        <p>If, after looking at all of that, a fast cash sale is the right move for you, we are here and we will be straightforward about whether it actually makes sense for your situation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW QUOTE -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">From a real seller</span>
+        <h2>Sellers we helped move forward</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"We were under a real time crunch and they moved fast without making us feel rushed. Everything was clear, and we closed on the date we needed."</p>
+          <cite>Maria G · Bay Area</cite>
+        </figure>
+        <figure class="quote">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"They were honest with us about our options and never pushed. When we decided to sell, the whole thing was simple and the offer held."</p>
+          <cite>Robert Day</cite>
+        </figure>
+      </div>
+      <p class="sits-note" style="text-align:center"><a href="/testimonials">Read more seller stories &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- INTERNAL LINKS -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Where to go next</span>
+        <h2>Have questions before you reach out?</h2>
+        <p>A foreclosure timeline can feel like a lot. These pages cover the most common questions and the simple way we buy.</p>
+      </div>
+      <div class="linkrow">
+        <a href="/sell-my-house-fast">Sell my house fast for cash</a>
+        <a href="/sell-house-as-is">Sell your house as-is, any condition</a>
+        <a href="/faq">Read frequently asked questions</a>
+        <a href="/contact">Contact NextKey</a>
+      </div>
+    </div>
+  </section>
+
+  <OfferBand source="NextKey Site - Foreclosure" />
+</Base>

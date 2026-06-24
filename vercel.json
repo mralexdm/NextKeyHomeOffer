@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/reviews", "destination": "/testimonials", "permanent": true },
+    { "source": "/review", "destination": "/testimonials", "permanent": true },
+    { "source": "/about", "destination": "/about-us", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/locations", "destination": "/areas-we-serve", "permanent": true },
+    { "source": "/locations/:city", "destination": "/areas-we-serve/:city", "permanent": true },
+    { "source": "/service-areas", "destination": "/areas-we-serve", "permanent": true },
+    { "source": "/areas", "destination": "/areas-we-serve", "permanent": true },
+    { "source": "/sell-your-house-fast", "destination": "/sell-my-house-fast", "permanent": true },
+    { "source": "/we-buy-houses", "destination": "/sell-my-house-fast", "permanent": true },
+    { "source": "/as-is", "destination": "/sell-house-as-is", "permanent": true },
+    { "source": "/foreclosure", "destination": "/stop-foreclosure", "permanent": true },
+    { "source": "/inherited", "destination": "/sell-inherited-house", "permanent": true }
+  ]
+}

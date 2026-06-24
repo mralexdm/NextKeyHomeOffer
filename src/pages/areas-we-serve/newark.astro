@@ -1,0 +1,226 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import OfferBand from '../../components/OfferBand.astro';
+import MapEmbed from '../../components/MapEmbed.astro';
+import NAP from '../../components/NAP.astro';
+import { site } from '../../data/site.js';
+import { cityBusinessSchema, serviceSchema } from '../../lib/schema.js';
+
+const title = 'Sell My House Fast in Newark, CA | NextKey Home Offer';
+const description = 'Sell your Newark, CA house fast for cash. A local buyer next door in Fremont, we buy as-is — no repairs, no fees, no commissions — and you pick the close date.';
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Areas We Serve', path: '/areas-we-serve' },
+  { name: 'Newark', path: '/areas-we-serve/newark' },
+];
+---
+<Base title={title} description={description}
+  schema={[
+    cityBusinessSchema({ slug: 'newark', name: 'Newark' }),
+    serviceSchema({
+      name: 'Sell Your Newark House As-Is for Cash',
+      description: 'We buy houses in Newark, CA as-is for cash — no repairs, no fees — and close on your timeline.',
+      areaServedName: 'Newark, CA',
+      areaServedType: 'City',
+    }),
+  ]}
+  ogTitle="Sell My House Fast in Newark, CA | NextKey Home Offer"
+  ogDescription="A real cash offer in 24 hours on your Newark house. Sell as-is, pay no fees, and pick your own closing date.">
+
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Newark, CA · Cash Home Buyers</span>
+      <h1>Sell My House Fast in Newark, CA</h1>
+      <p>We are a local cash buyer right next door in Fremont, and we buy houses all over Newark as-is. Get a real, no-obligation cash offer in 24 hours, skip the repairs and the listing, and pick the closing date that fits your life.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- WHY SELL TO NEXTKEY IN NEWARK -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Why Newark homeowners sell to NextKey</span>
+        <h2>A simpler way to sell a Newark house</h2>
+        <p>Newark is a small city wrapped almost entirely by Fremont, so we are practically neighbors. A lot of the homes here are flat-lot tract houses from the 1960s and 70s, and many come to us inherited or in need of updates. Listing them means repairs, showings, and months of waiting. We skip all of that and pay cash.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3>Buy as-is</h3>
+          <p>Original kitchens, aging roofs, dated wiring, deferred maintenance. Leave it. We buy older Newark homes exactly as they sit and handle the repairs ourselves.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>No fees or commissions</h3>
+          <p>No agent's 6 percent, no listing costs. You keep the full offer, and we cover standard closing costs at a local title company.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><polyline points="9 11.5 11.5 14 15.5 9.5"/></svg></div>
+          <h3>Certainty of cash</h3>
+          <p>We buy with our own funds, so there is no bank, no appraisal, and no financing that can fall through. Proof of funds on request.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10 10 0 0 1 12 20c-7 0-11-8-11-8a18.5 18.5 0 0 1 5.06-5.94M9.9 4.24A9 9 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
+          <h3>No showings</h3>
+          <p>No open houses on the weekend, no lockbox, no strangers walking your halls. One quick walkthrough with us is all it takes.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
+          <h3>Real speed</h3>
+          <p>Most offers go out within 24 hours, and we can close in as few as 7 days. No 60-day escrow drama hanging over you.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <h3>Your timeline</h3>
+          <p>Need to close before a move across the Dumbarton to the Peninsula? Done. Need 90 days to sort an estate? Also done. You pick the date.</p>
+        </article>
+      </div>
+      <p class="sits-note">NextKey is a local cash buyer, not a brokerage, and we do not give legal or tax advice. We close at a reputable local title company, so a licensed professional handles the paperwork. Want the full walkthrough? <a href="/how-it-works">See how it works &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- NEWARK NEIGHBORHOODS -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Where we buy in Newark</span>
+        <h2>Every Newark neighborhood, every condition</h2>
+        <p>Newark is mostly flat, suburban, and walkable from one tract to the next. We buy across all of it, from the established streets near NewPark Mall to the lakeside blocks and the newer construction going up around the old development sites.</p>
+      </div>
+      <div class="local-grid">
+        <div class="local-card">
+          <h3>Lido Faire &amp; Lakeshore</h3>
+          <p>The water-adjacent tracts of older single-story homes. Plenty are inherited or original-condition, which is exactly what we buy.</p>
+        </div>
+        <div class="local-card">
+          <h3>NewPark &amp; Central Newark</h3>
+          <p>The blocks around NewPark Mall and Newark Boulevard. Convenient, established, and full of 1960s and 70s tract houses.</p>
+        </div>
+        <div class="local-card">
+          <h3>The new Newark development</h3>
+          <p>Newer construction near the former industrial and bayfront sites. If your plans changed before you settled in, we will make an offer.</p>
+        </div>
+        <div class="local-card">
+          <h3>Cherry-Guardino &amp; Mowry</h3>
+          <p>Long-held family homes near the Fremont border. Many owners here are downsizing or settling an estate.</p>
+        </div>
+        <div class="local-card">
+          <h3>Dumbarton corridor</h3>
+          <p>The commuter side of Newark near the bridge approach to the Peninsula. We buy here whether you are relocating fast or just done.</p>
+        </div>
+        <div class="local-card">
+          <h3>Anywhere else in 94560</h3>
+          <p>Vacant, tenant-occupied, behind on payments, or just tired of it. If it is a Newark house, it is worth a quick call.</p>
+        </div>
+      </div>
+      <div class="tag-row" style="margin-top:18px">
+        <span class="tag">As-is</span>
+        <span class="tag">Inherited &amp; probate</span>
+        <span class="tag">Needs updates</span>
+        <span class="tag">Vacant</span>
+        <span class="tag">Tenant-occupied</span>
+        <span class="tag">Relocating</span>
+        <span class="tag">Foreclosure</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL PROOF: MARIAH'S NEWARK REVIEW -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">A real Newark seller</span>
+        <h2>How it went for a family right here in Newark</h2>
+      </div>
+      <div class="quotes">
+        <article class="quote">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"They purchased my grandparents' house as-is off market in Newark in under 30 days. They even paid for storage and helped with the move."</p>
+          <cite>Mariah · Newark</cite>
+        </article>
+      </div>
+      <p class="sits-note" style="text-align:center">This is the kind of move we make easy: an older Newark home, sold as-is, with help on the parts that are hard to do alone. <a href="/testimonials">Read more seller stories &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS RECAP -->
+  <section class="band band--dark">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">How it works in Newark</span>
+        <h2>Three steps. No realtor required.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__n">Step 01</div>
+          <h3>Tell us about your Newark house</h3>
+          <p>Share the address and a few details by form, phone, or text. It takes about two minutes, with no cost and no obligation.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 02</div>
+          <h3>Get your cash offer in 24 hours</h3>
+          <p>We review recent Newark sales and your home's condition, then send a real, written cash offer, typically within one business day.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 03</div>
+          <h3>Pick your date and get paid</h3>
+          <p>Choose any closing date that works for you. We close at a local title company and you walk away with cash in hand.</p>
+        </div>
+      </div>
+      <div class="steps-cta"><a class="btn btn--primary btn--lg" href="#offer">Start with your address</a> <a class="btn btn--ghost btn--lg" href="/how-it-works">See the full process</a></div>
+    </div>
+  </section>
+
+  <!-- MAP + NAP -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Local and close by</span>
+        <h2>Based in Fremont, buying all over Newark</h2>
+        <p>We are minutes from Newark, so a walkthrough is easy to schedule and we know the local market. Reach a real local person any time, or get your offer started below.</p>
+      </div>
+      <div class="split">
+        <div>
+          <NAP heading="Talk to NextKey" />
+        </div>
+        <div>
+          <MapEmbed title="NextKey Home Offer — serving Newark, CA" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEARBY CITY LINKS -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>Selling near Newark?</h2>
+          <p>Newark sits right in the middle of the East Bay cities we buy in, so if your house is just over a border we have you covered too. We buy all around the Tri-City area and beyond, with the same cash, the same as-is purchase, and the same no-fee promise.</p>
+          <p>Explore the nearby cities below, or head back to the full <a href="/areas-we-serve">areas we serve</a> page to see everywhere we buy across the Bay Area.</p>
+          <div class="linkrow">
+            <a href="/areas-we-serve/fremont">Sell a house in Fremont</a>
+            <a href="/areas-we-serve/union-city">Sell a house in Union City</a>
+            <a href="/areas-we-serve/hayward">Sell a house in Hayward</a>
+            <a href="/areas-we-serve">All areas we serve</a>
+          </div>
+        </div>
+        <aside class="aside-card">
+          <h3>Prefer to talk right now?</h3>
+          <p>Skip the form and reach a local person directly. We are open every day, 24 hours, and there is never any obligation.</p>
+          <a class="btn btn--primary btn--block" href={site.phoneHref} data-track="call">Call {site.phone}</a>
+          <a class="btn btn--ghost btn--block" href={site.smsHref} data-track="text" style="margin-top:12px">Text {site.phone}</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <OfferBand source="NextKey Site - Newark" />
+</Base>

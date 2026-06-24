@@ -1,0 +1,217 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import OfferBand from '../components/OfferBand.astro';
+import { serviceSchema } from '../lib/schema.js';
+import { site } from '../data/site.js';
+
+const title = 'Sell an Inherited or Probate House for Cash | NextKey Home Offer';
+const description = 'Inherited a house in the Bay Area? We buy inherited and probate properties as-is for cash, coordinate with multiple heirs, and make the whole sale simple.';
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Sell Inherited House', path: '/sell-inherited-house' },
+];
+---
+<Base title={title} description={description}
+  schema={[
+    serviceSchema({
+      name: 'Sell an Inherited or Probate House for Cash',
+      description: 'Inherited a house in the Bay Area? We buy inherited and probate properties as-is for cash, coordinate with multiple heirs, and make the sale simple.',
+    }),
+  ]}
+  ogTitle="Sell an Inherited House in the Bay Area — Simple, As-Is, Cash"
+  ogDescription="We buy inherited and probate homes as-is for cash, work with multiple heirs and the estate's attorney, and let you leave behind whatever you don't want.">
+
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Inherited &amp; probate homes</span>
+      <h1>Sell an Inherited House in the Bay Area</h1>
+      <p>Losing a parent or grandparent is hard enough without a house to sort out. We buy inherited homes as-is for cash, work patiently with everyone involved, and take the weight of the property off your shoulders.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- WE GET WHERE YOU ARE -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>When a house is the last thing you want to deal with</h2>
+          <p>An inherited house usually arrives at the worst possible time. You're grieving, you may live out of the area, and suddenly there's a property with bills, taxes, and decades of belongings inside. It can feel like a second job on top of everything else you're carrying. We've helped a lot of families through exactly this, and our goal is to make the house the easy part.</p>
+          <p>You don't have to fix it up, clear it out, or get it "market ready." We buy with our own funds, in the home's current condition, and we let you take what matters and leave the rest. There's no listing, no open houses, and no strangers walking through. When you're ready, you pick the closing date and we close at a reputable local title company.</p>
+          <p>And there's no pressure to decide today. If you just need someone to explain your options, that's a phone call we're glad to have. A real person answers, listens, and tells you straight what we can and can't do.</p>
+        </div>
+        <aside class="aside-card">
+          <h3>How we keep it simple</h3>
+          <ul>
+            <li>We buy the house exactly as-is</li>
+            <li>Leave furniture, clutter, and belongings</li>
+            <li>One fair cash offer, no fees or commissions</li>
+            <li>We work with multiple heirs and the estate</li>
+            <li>You choose the closing date and timeline</li>
+            <li>Local title-company closing</li>
+          </ul>
+          <h3 style="margin-top:24px">Out of state or short on time?</h3>
+          <p>Most of this can be handled by phone and email. Call when it works for you.</p>
+          <a class="btn btn--primary btn--block" href={site.phoneHref} data-track="call">Call {site.phone}</a>
+          <a class="btn btn--ghost btn--block" href={site.smsHref} data-track="text" style="margin-top:12px">Text {site.phone}</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMON SITUATIONS -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Common situations</span>
+        <h2>If any of this sounds familiar, you're in the right place</h2>
+        <p>Every inherited house comes with its own story. These are the situations we work through most often, and none of them are a problem for a cash sale.</p>
+      </div>
+      <div class="local-grid">
+        <article class="local-card">
+          <h3>Heirs out of the area</h3>
+          <p>You live in another city or state and can't keep flying back to deal with the house. We handle most of the process remotely, by phone and email.</p>
+        </article>
+        <article class="local-card">
+          <h3>Multiple siblings or heirs</h3>
+          <p>Several people have to agree on a price and a plan. One clear written cash offer makes the conversation easier and keeps everyone on the same page.</p>
+        </article>
+        <article class="local-card">
+          <h3>A house full of belongings</h3>
+          <p>Decades of furniture, papers, and keepsakes. You don't have to empty it. Take what's meaningful and leave the rest for us to clear out.</p>
+        </article>
+        <article class="local-card">
+          <h3>Deferred maintenance</h3>
+          <p>An older home that needs a roof, plumbing, or a full update. We buy it in its current condition with no repairs and no clean-up on your end.</p>
+        </article>
+        <article class="local-card">
+          <h3>Ongoing carrying costs</h3>
+          <p>Property taxes, insurance, utilities, and upkeep adding up every month on a house nobody lives in. A faster sale stops that bleed.</p>
+        </article>
+        <article class="local-card">
+          <h3>The estate is in probate</h3>
+          <p>The sale may need to go through probate first. We're comfortable working alongside the estate's attorney and the court's timeline.</p>
+        </article>
+      </div>
+      <p class="sits-note">Not sure where your situation fits? <a href={site.phoneHref} data-track="call">Call or text {site.phone}</a> and walk us through it, or read more about <a href="/sell-house-as-is">selling a house as-is</a>.</p>
+    </div>
+  </section>
+
+  <!-- HOW WE MAKE IT SIMPLE -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">How we make it simple</span>
+        <h2>We take the property off your plate</h2>
+        <p>The point of selling to NextKey is that the house stops being your problem. Here's what that looks like in practice, from the first call through closing.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>Buy it as-is</h3>
+          <p>No repairs, no staging, no cleaning. We look at the home as it sits today and make a fair cash offer based on its real condition.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg></div>
+          <h3>Leave the belongings</h3>
+          <p>Keep the photos and the heirlooms that matter. Everything else can stay. We handle the cleanout after closing so you don't have to.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Coordinate with everyone</h3>
+          <p>We work with all the heirs and, when needed, with the estate's attorney, so the sale moves forward without anyone feeling pushed.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 15 11 17 15 13"/></svg></div>
+          <h3>Flexible timeline</h3>
+          <p>Close in as few as 7 days, or take the weeks you need to sort things out. The date is yours, and we'll work around probate if it applies.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>One clean cash number</h3>
+          <p>No commissions, no listing fees, no surprise costs at the table. The amount we agree on is the amount the estate receives.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <h3>Local and accountable</h3>
+          <p>We're a local Bay Area buyer with real reviews and proof of funds on request. You can verify exactly who you're working with.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBATE NOTE + DISCLAIMER -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>A note on probate, taxes, and the legal side</h2>
+          <p>Many inherited homes have to pass through probate before they can be sold, especially when there was no living trust in place. Probate is the court process that confirms who has the legal authority to sell the property. It can take time, and the steps vary depending on how the estate was set up and whether all the heirs agree.</p>
+          <p>We're not a brokerage, and we don't give legal or tax advice. What we can do is buy the house once the estate is ready to sell, and work patiently alongside the attorney handling the probate so the closing lines up with the court's process. We've closed plenty of sales this way and we're used to moving at the estate's pace, not rushing it.</p>
+          <p>Before you make decisions, please talk to a probate attorney about authority to sell, and a CPA or tax professional about any capital-gains or step-up-in-basis questions. Those answers depend on your specific situation, and the right professional can save the estate real money. When you're ready on the legal side, we'll be ready on the buying side.</p>
+        </div>
+        <aside class="aside-card">
+          <h3>Honest, straightforward terms</h3>
+          <ul>
+            <li>Cash offer, usually within ~24 hours</li>
+            <li>No fees, no commissions, no lowball games</li>
+            <li>We buy as-is with our own funds</li>
+            <li>Proof of funds available on request</li>
+            <li>Close at a local title company</li>
+          </ul>
+          <h3 style="margin-top:24px">Have questions first?</h3>
+          <p>Talk it through with us before anything is decided.</p>
+          <a class="btn btn--primary btn--block" href="/contact">Contact NextKey</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW QUOTE -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">From a real seller</span>
+        <h2>A family home, sold the simple way</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"They purchased my grandparents' house as-is off market in Newark in under 30 days. They even paid for storage and helped with the move."</p>
+          <cite>Mariah · Newark</cite>
+        </figure>
+        <figure class="quote">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"We were helping our parents sell their older home in Fremont and didn't know where to start. NextKey made everything simple and stress free."</p>
+          <cite>Marybeth Garza · Fremont</cite>
+        </figure>
+      </div>
+      <p class="sits-note" style="text-align:center"><a href="/testimonials">Read more seller stories &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- INTERNAL LINKS -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Where to go next</span>
+        <h2>Helpful next steps</h2>
+        <p>An inherited house often overlaps with other situations. Here are the pages most families read next.</p>
+      </div>
+      <div class="linkrow">
+        <a href="/sell-house-as-is">Sell the house as-is, any condition</a>
+        <a href="/sell-my-house-fast">Sell your house fast for cash</a>
+        <a href="/how-it-works">See how the process works</a>
+        <a href="/contact">Talk to a real person</a>
+      </div>
+    </div>
+  </section>
+
+  <OfferBand source="NextKey Site - Inherited" />
+</Base>

@@ -1,0 +1,119 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import OfferBand from '../components/OfferBand.astro';
+import { coreFaqs } from '../data/faqs.js';
+import { faqSchema } from '../lib/schema.js';
+import { site } from '../data/site.js';
+
+const title = 'Frequently Asked Questions | NextKey Home Offer';
+const description = 'Honest answers about selling your Bay Area house to NextKey for cash: how fast we close, fees, as-is sales, tenants, areas served, and whether there is any catch.';
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'FAQ', path: '/faq' },
+];
+
+// All FAQs rendered on this page = the 6 core questions plus extras written
+// for this page. The faqSchema() call below uses this SAME array, so the
+// visible accordion and the FAQPage JSON-LD always match exactly.
+const allFaqs = [
+  ...coreFaqs,
+  {
+    q: 'What kinds of property do you buy?',
+    a: 'Single-family houses, condos, townhomes, duplexes, and small multi-unit buildings. We also buy vacant land and mobile homes on owned lots in our area. If you are not sure your property fits, just ask and we will tell you straight.',
+  },
+  {
+    q: 'Will you buy if I have tenants in the house?',
+    a: 'Yes. We buy houses with tenants in place, including month-to-month renters and those on a lease. You do not have to ask anyone to leave or chase down back rent. We handle the situation after closing and keep everything legal and respectful.',
+  },
+  {
+    q: 'What areas do you cover?',
+    a: 'We buy across Fremont, the South Bay, and the East Bay, including Newark, Union City, Hayward, Milpitas, San Leandro, San Jose, and Castro Valley. You can see the towns we focus on most on our areas-we-serve page, and if your address is nearby, just ask.',
+  },
+  {
+    q: 'Is there any cost or obligation to get an offer?',
+    a: 'None. Getting your cash offer is free, and there is no obligation to accept it. We do not charge for the offer, we do not lock you into anything, and we do not pass your information around. You decide if and when to move forward.',
+  },
+];
+
+const lead = allFaqs.slice(0, 6);
+const extra = allFaqs.slice(6);
+---
+<Base title={title} description={description} schema={[faqSchema(allFaqs)]}
+  ogTitle="NextKey Home Offer: Frequently Asked Questions"
+  ogDescription="Honest answers about a cash sale in the Bay Area: closing speed, fees, as-is buying, what we buy, tenants, areas, and obligation.">
+
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Answers · No runaround</span>
+      <h1>Frequently Asked Questions</h1>
+      <p>Selling a house for cash should not be confusing. Here are honest answers to the questions Bay Area sellers ask us most, from how fast we close to whether there is any catch.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- THE BASICS -->
+  <section class="band band--cream" id="the-basics">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The basics</span>
+        <h2>The questions sellers ask first</h2>
+        <p>If you have never sold a house for cash, start here. These cover the offer, the timeline, the fees, and how we treat your home. Want the bigger picture? <a href="/how-it-works">See exactly how the process works &rarr;</a></p>
+      </div>
+      <div class="faq">
+        {lead.map((f, i) => (
+          <details open={i === 0}>
+            <summary>{f.q}<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTY, TENANTS, AREAS, OBLIGATION -->
+  <section class="band band--surface" id="more-questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">A little deeper</span>
+        <h2>What we buy, where, and how it works for you</h2>
+        <p>Different houses come with different situations. Here is what we buy, the towns we cover, and what happens when there are tenants or repairs in the picture. If your house needs work, you can <a href="/sell-house-as-is">leave it exactly as-is</a> and we handle the rest.</p>
+      </div>
+      <div class="faq">
+        {extra.map((f) => (
+          <details>
+            <summary>{f.q}<svg class="pm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+      <p class="sits-note">A quick note on fairness: NextKey is a local cash buyer, not a brokerage, and we do not give legal or tax advice. We will always tell you straight whether selling to us actually makes sense for your situation.</p>
+    </div>
+  </section>
+
+  <!-- STILL HAVE A QUESTION -->
+  <section class="band band--cream" id="more-help">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Still have a question?</span>
+        <h2>Talk to a real person, or read more</h2>
+        <p>If your question is not above, the fastest way to an answer is to ask. Call or text {site.phone} and a real person answers, or follow one of these to dig deeper.</p>
+      </div>
+      <div class="linkrow">
+        <a href="/how-it-works">How the 3-step process works</a>
+        <a href="/sell-house-as-is">Sell a house that needs repairs</a>
+        <a href="/areas-we-serve">Areas we buy houses in</a>
+        <a href="/testimonials">Real seller reviews</a>
+        <a href="/contact">Contact NextKey</a>
+        <a href={site.smsHref} data-track="text">Text us at {site.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <OfferBand source="NextKey Site - FAQ" />
+</Base>

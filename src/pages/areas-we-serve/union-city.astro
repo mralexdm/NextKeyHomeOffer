@@ -1,0 +1,226 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import OfferBand from '../../components/OfferBand.astro';
+import MapEmbed from '../../components/MapEmbed.astro';
+import NAP from '../../components/NAP.astro';
+import { site } from '../../data/site.js';
+import { cityBusinessSchema, serviceSchema } from '../../lib/schema.js';
+
+const title = 'Sell My House Fast in Union City, CA | NextKey Home Offer';
+const description = 'Sell your Union City, CA house fast for cash. A local buyer next door in Fremont, we buy as-is in Alvarado and Decoto — no repairs, no fees, you pick the date.';
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Areas We Serve', path: '/areas-we-serve' },
+  { name: 'Union City', path: '/areas-we-serve/union-city' },
+];
+---
+<Base title={title} description={description}
+  schema={[
+    cityBusinessSchema({ slug: 'union-city', name: 'Union City' }),
+    serviceSchema({
+      name: 'Sell Your Union City House As-Is for Cash',
+      description: 'We buy houses in Union City, CA as-is for cash — no repairs, no fees — and close on your timeline.',
+      areaServedName: 'Union City, CA',
+      areaServedType: 'City',
+    }),
+  ]}
+  ogTitle="Sell My House Fast in Union City, CA | NextKey Home Offer"
+  ogDescription="A real cash offer in 24 hours on your Union City house. Sell as-is, pay no fees, and pick your own closing date.">
+
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Union City, CA · Cash Home Buyers</span>
+      <h1>Sell My House Fast in Union City, CA</h1>
+      <p>We are a local cash buyer right next door in Fremont, and we buy houses all over Union City as-is — from historic Alvarado to the Decoto blocks near BART. Get a real, no-obligation cash offer in 24 hours, skip the repairs and the listing, and pick the closing date that fits your life.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- WHY SELL TO NEXTKEY IN UNION CITY -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Why Union City homeowners sell to NextKey</span>
+        <h2>A simpler way to sell a Union City house</h2>
+        <p>Union City sits right between Fremont and Hayward, so we are practically neighbors. It is a diverse, family-rooted community with a real range of housing — historic homes in the old Alvarado district, longtime family blocks in Decoto, mid-century tracts, and newer builds tucked up near the hills. Whatever decade your house comes from and whatever shape it is in, the offer from us is the same: a fair cash number, paid as-is.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3>Buy as-is</h3>
+          <p>Original kitchens, aging roofs, dated wiring, deferred maintenance. Leave it. We buy older Union City homes exactly as they sit and handle the repairs ourselves.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>No fees or commissions</h3>
+          <p>No agent's 6 percent, no listing costs. You keep the full offer, and we cover standard closing costs at a local title company.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><polyline points="9 11.5 11.5 14 15.5 9.5"/></svg></div>
+          <h3>Certainty of cash</h3>
+          <p>We buy with our own funds, so there is no bank, no appraisal, and no financing that can fall through. Proof of funds on request.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10 10 0 0 1 12 20c-7 0-11-8-11-8a18.5 18.5 0 0 1 5.06-5.94M9.9 4.24A9 9 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
+          <h3>No showings</h3>
+          <p>No open houses on the weekend, no lockbox, no strangers walking your halls. One quick walkthrough with us is all it takes.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
+          <h3>Real speed</h3>
+          <p>Most offers go out within 24 hours, and we can close in as few as 7 days. No 60-day escrow drama hanging over you.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <h3>Your timeline</h3>
+          <p>Need to close before a job change pulls you down the BART line? Done. Need 90 days to settle an estate? Also done. You pick the date.</p>
+        </article>
+      </div>
+      <p class="sits-note">NextKey is a local cash buyer, not a brokerage, and we do not give legal or tax advice. We close at a reputable local title company, so a licensed professional handles the paperwork. Want the full walkthrough? <a href="/how-it-works">See how it works &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- UNION CITY NEIGHBORHOODS -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Where we buy in Union City</span>
+        <h2>Every Union City neighborhood, every condition</h2>
+        <p>Union City packs a lot into a compact footprint — the historic core of Alvarado, the close-knit streets of Decoto, the retail hub at Union Landing, and the commuter blocks built up around the BART and Intermodal station. We buy across all of it, in any condition.</p>
+      </div>
+      <div class="local-grid">
+        <div class="local-card">
+          <h3>Alvarado</h3>
+          <p>The city's historic district, with older homes that carry real character and, often, original wiring and plumbing. We buy them exactly as they sit.</p>
+        </div>
+        <div class="local-card">
+          <h3>Decoto</h3>
+          <p>One of Union City's oldest, most close-knit neighborhoods, full of longtime family homes. Many come to us inherited or in need of updates.</p>
+        </div>
+        <div class="local-card">
+          <h3>Union Landing &amp; central</h3>
+          <p>The established tracts near the Union Landing shopping center. Convenient, suburban, and full of mid-century houses ready for a clean, fast sale.</p>
+        </div>
+        <div class="local-card">
+          <h3>BART &amp; Intermodal corridor</h3>
+          <p>The commuter blocks around the Union City BART station and transit hub. If a job or a move is pulling you out fast, we will make an offer.</p>
+        </div>
+        <div class="local-card">
+          <h3>Hillside &amp; newer builds</h3>
+          <p>The newer homes tucked up toward the hills on the east side. Even well-kept houses here get sold for cash when life calls for a quick exit.</p>
+        </div>
+        <div class="local-card">
+          <h3>Anywhere else in 94587</h3>
+          <p>Vacant, tenant-occupied, behind on payments, or just tired of it. If it is a Union City house, it is worth a quick call.</p>
+        </div>
+      </div>
+      <div class="tag-row" style="margin-top:18px">
+        <span class="tag">As-is</span>
+        <span class="tag">Inherited &amp; probate</span>
+        <span class="tag">Needs updates</span>
+        <span class="tag">Vacant</span>
+        <span class="tag">Tenant-occupied</span>
+        <span class="tag">Relocating</span>
+        <span class="tag">Foreclosure</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL PROOF: GENERAL 5-STAR REVIEW -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">What sellers say about NextKey</span>
+        <h2>Honest, simple, and never pushy</h2>
+      </div>
+      <div class="quotes">
+        <article class="quote">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"Edward and his team were professional, honest, and made the entire process simple and hassle free."</p>
+          <cite>Scott Alves</cite>
+        </article>
+      </div>
+      <p class="sits-note" style="text-align:center">That is the experience we aim for with every Union City seller: a fair cash offer, a straight answer, and no pressure to decide. <a href="/testimonials">Read more seller stories &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS RECAP -->
+  <section class="band band--dark">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">How it works in Union City</span>
+        <h2>Three steps. No realtor required.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__n">Step 01</div>
+          <h3>Tell us about your Union City house</h3>
+          <p>Share the address and a few details by form, phone, or text. It takes about two minutes, with no cost and no obligation.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 02</div>
+          <h3>Get your cash offer in 24 hours</h3>
+          <p>We review recent Union City sales and your home's condition, then send a real, written cash offer, typically within one business day.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 03</div>
+          <h3>Pick your date and get paid</h3>
+          <p>Choose any closing date that works for you. We close at a local title company and you walk away with cash in hand.</p>
+        </div>
+      </div>
+      <div class="steps-cta"><a class="btn btn--primary btn--lg" href="#offer">Start with your address</a> <a class="btn btn--ghost btn--lg" href="/how-it-works">See the full process</a></div>
+    </div>
+  </section>
+
+  <!-- MAP + NAP -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Local and close by</span>
+        <h2>Based in Fremont, buying all over Union City</h2>
+        <p>We are minutes from Union City, so a walkthrough is easy to schedule and we know the local market. Reach a real local person any time, or get your offer started below.</p>
+      </div>
+      <div class="split">
+        <div>
+          <NAP heading="Talk to NextKey" />
+        </div>
+        <div>
+          <MapEmbed title="NextKey Home Offer — serving Union City, CA" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEARBY CITY LINKS -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>Selling near Union City?</h2>
+          <p>Union City sits right in the heart of the East Bay cities we buy in, so if your house is just over a border we have you covered too. We buy all around the Tri-City area and beyond, with the same cash, the same as-is purchase, and the same no-fee promise.</p>
+          <p>Explore the nearby cities below, or head back to the full <a href="/areas-we-serve">areas we serve</a> page to see everywhere we buy across the Bay Area.</p>
+          <div class="linkrow">
+            <a href="/areas-we-serve/fremont">Sell a house in Fremont</a>
+            <a href="/areas-we-serve/newark">Sell a house in Newark</a>
+            <a href="/areas-we-serve/hayward">Sell a house in Hayward</a>
+            <a href="/areas-we-serve">All areas we serve</a>
+          </div>
+        </div>
+        <aside class="aside-card">
+          <h3>Prefer to talk right now?</h3>
+          <p>Skip the form and reach a local person directly. We are open every day, 24 hours, and there is never any obligation.</p>
+          <a class="btn btn--primary btn--block" href={site.phoneHref} data-track="call">Call {site.phone}</a>
+          <a class="btn btn--ghost btn--block" href={site.smsHref} data-track="text" style="margin-top:12px">Text {site.phone}</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <OfferBand source="NextKey Site - Union City" />
+</Base>

@@ -1,0 +1,197 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import OfferBand from '../../components/OfferBand.astro';
+import MapEmbed from '../../components/MapEmbed.astro';
+import NAP from '../../components/NAP.astro';
+import { site } from '../../data/site.js';
+import { cityBusinessSchema, serviceSchema } from '../../lib/schema.js';
+
+const title = 'Sell My House Fast in Hayward, CA | NextKey Home Offer';
+const description = 'Sell your Hayward, CA house fast for cash. We buy as-is across the Heart of the Bay — no repairs, no fees, no commissions — and you pick the closing date.';
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Areas We Serve', path: '/areas-we-serve' },
+  { name: 'Hayward', path: '/areas-we-serve/hayward' },
+];
+---
+<Base title={title} description={description} schema={[
+  cityBusinessSchema({ slug: 'hayward', name: 'Hayward' }),
+  serviceSchema({
+    name: 'Sell Your Hayward House As-Is for Cash',
+    description: 'We buy houses in Hayward, CA as-is for cash — no repairs, no fees — and close on your timeline.',
+    areaServedName: 'Hayward, CA',
+    areaServedType: 'City',
+  }),
+]}
+  ogTitle="Sell My House Fast in Hayward, CA | NextKey Home Offer"
+  ogDescription="A real cash offer in about 24 hours on your Hayward house. Sell as-is, pay no fees, and pick your own closing date.">
+
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Hayward, CA · Cash Home Buyers</span>
+      <h1>Sell My House Fast in Hayward, CA</h1>
+      <p>NextKey buys houses all over the Heart of the Bay as-is for cash — from the flats near downtown to the hillside homes above Cal State East Bay. Get a real, no-obligation cash offer in about 24 hours, skip the repairs and the listing, and pick the closing date that works for you.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- WHY SELL TO NEXTKEY IN HAYWARD -->
+  <section class="band band--cream" id="why-hayward">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>Why Hayward homeowners sell to NextKey</h2>
+          <p>Hayward is one of the larger, more established cities in the East Bay, and the housing stock shows it. You have older bungalows and post-war tract homes down in the flats around B Street and Mission Boulevard, mid-century houses through Mt. Eden and Fairway Park, and bigger lots climbing into the Hayward Hills above Cal State East Bay. Different eras, different conditions — the same straight cash offer from us.</p>
+          <p>A lot of longtime owners here are sitting on real equity but also real upkeep. After decades, the roof, the foundation, the wiring, or the plumbing may all be due. Many homes come to us inherited, with an out-of-area family that would rather not manage repairs from a distance. Listing the traditional way means fixing all of that, then showings, then waiting on a buyer's loan. We skip every step. <strong>We buy with our own funds. No lowball, no listing, no spam.</strong></p>
+          <p>Because we are local, just down the freeway in Fremont, we know what Hayward access is worth — the easy reach to I-880 and I-580 and the quick hop across the San Mateo Bridge to the Peninsula. We price honestly against recent sales near you, not a national formula. You get a written, no-obligation cash offer in about 24 hours, and we can close at a local title company in as few as 7 days, or whenever suits you. Want the full walkthrough first? See exactly <a href="/how-it-works">how it works</a>.</p>
+          <div class="linkrow">
+            <a href="/sell-house-as-is">Sell a Hayward house as-is</a>
+            <a href="/sell-inherited-house">Sell an inherited house</a>
+            <a href="/why-sell">Why sellers choose cash</a>
+          </div>
+        </div>
+        <aside class="aside-card">
+          <h3>A straight cash offer on your Hayward home</h3>
+          <p>Tell us the address and a little about the house. There is nothing to clean, fix, or stage, and there is never any obligation.</p>
+          <a class="btn btn--primary btn--block" href="#offer">Get my cash offer</a>
+          <a class="btn btn--ghost btn--block" href={site.phoneHref} data-track="call" style="margin-top:12px">Call {site.phone}</a>
+          <a class="btn btn--ghost btn--block" href={site.smsHref} data-track="text" style="margin-top:12px">Text {site.phone}</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAYWARD NEIGHBORHOODS -->
+  <section class="band band--surface" id="neighborhoods">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Where we buy in Hayward</span>
+        <h2>Every Hayward neighborhood, every condition</h2>
+        <p>From the downtown flats to the homes up in the hills, we buy across the whole city. Here is a quick read on the areas we know best.</p>
+      </div>
+      <div class="local-grid">
+        <article class="local-card">
+          <h3>Downtown &amp; B Street</h3>
+          <p>The historic core around B Street and Foothill Boulevard, full of older bungalows and longtime owners. Charm and character, often with decades of deferred maintenance. We buy them as-is.</p>
+        </article>
+        <article class="local-card">
+          <h3>Mt. Eden</h3>
+          <p>Established post-war tract homes on the west side near the bay flats. A common spot for inherited and original-condition houses — exactly what we buy without a single repair.</p>
+        </article>
+        <article class="local-card">
+          <h3>Fairway Park &amp; Southgate</h3>
+          <p>Mid-century neighborhoods between Hesperian and the freeway. Solid family homes where owners often want a clean, fast sale instead of months of showings.</p>
+        </article>
+        <article class="local-card">
+          <h3>Glen Eden</h3>
+          <p>Quiet, settled streets near the downtown edge. Plenty of longtime owners here are downsizing, relocating, or settling an estate and want it simple.</p>
+        </article>
+        <article class="local-card">
+          <h3>Hayward Highland &amp; the Hills</h3>
+          <p>Larger hillside lots climbing toward Cal State East Bay, with sweeping bay views. Higher-value homes where a certain, fast cash sale still beats the listing grind.</p>
+        </article>
+        <article class="local-card">
+          <h3>Anywhere in 94541, 94542, 94544 or 94545</h3>
+          <p>Vacant, tenant-occupied, behind on payments, or just tired of it. If it is a Hayward house, it is worth a quick call for a cash offer.</p>
+        </article>
+      </div>
+      <p class="sits-note">Near the Hayward BART, out toward the shoreline, or up off Mission Boulevard — if it is in Hayward, we will make you an offer.</p>
+      <div class="tag-row" style="justify-content:center;margin-top:18px">
+        <span class="tag">As-is</span>
+        <span class="tag">Inherited &amp; probate</span>
+        <span class="tag">Deferred maintenance</span>
+        <span class="tag">Vacant</span>
+        <span class="tag">Tenant-occupied</span>
+        <span class="tag">Relocating</span>
+        <span class="tag">Foreclosure</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL PROOF: GENERAL REVIEW -->
+  <section class="band band--cream" id="local-proof">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">A real seller's story</span>
+        <h2>When a house needs work, we handle it</h2>
+        <p>So many Hayward homes come to us with years of deferred maintenance. Here is what that looked like for one seller.</p>
+      </div>
+      <div class="quotes">
+        <article class="quote">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"Our house needed a lot of repairs, but they bought it as-is and handled everything. They even helped us with resources to find a new place."</p>
+          <cite>Robert Day · NextKey seller</cite>
+        </article>
+      </div>
+      <p class="sits-note" style="text-align:center">That is the whole point of selling to us: leave the repairs and the cleanout to NextKey and walk away with cash. <a href="/testimonials">Read more seller stories &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS RECAP -->
+  <section class="band band--dark" id="how-it-works">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">How it works in Hayward</span>
+        <h2>Three steps. No realtor required.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__n">Step 01</div>
+          <h3>Tell us about your Hayward house</h3>
+          <p>Share the address and a few details by form, phone, or text. Rough condition, whether anyone is living there, your timeline — that is it. It takes about two minutes, with no cost and no obligation.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 02</div>
+          <h3>Get your cash offer in about 24 hours</h3>
+          <p>We review recent Hayward sales and your home's condition, then send a real, written cash offer, usually within one business day. We buy with our own funds, so there is no bank, no appraisal, and no financing to fall through. Proof of funds on request.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 03</div>
+          <h3>Pick your date and get paid</h3>
+          <p>If the number works, you choose the closing date. Need out in a week? We can close in as few as 7 days. Need more time to line up your next place? That works too. We close at a reputable local title company — no fees, no commissions.</p>
+        </div>
+      </div>
+      <div class="steps-cta"><a class="btn btn--primary btn--lg" href="#offer">Start with your address</a> <a class="btn btn--ghost btn--lg" href="/how-it-works">See the full process</a></div>
+    </div>
+  </section>
+
+  <!-- MAP + NAP -->
+  <section class="band band--surface" id="find-us">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Local and close by</span>
+        <h2>Based in Fremont, buying all over Hayward</h2>
+        <p>We are a short drive up the freeway from Hayward, so a walkthrough is easy to schedule and we know the local market. Reach a real local person any time, or get your offer started below.</p>
+      </div>
+      <div class="split">
+        <MapEmbed title="NextKey Home Offer — serving Hayward, CA" />
+        <NAP heading="Talk to NextKey" />
+      </div>
+    </div>
+  </section>
+
+  <!-- NEARBY CITY LINKS -->
+  <section class="band band--cream" id="nearby">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Nearby cities we buy in</span>
+        <h2>Selling outside Hayward?</h2>
+        <p>We buy all across the East Bay and the Tri-City area. If your house is in one of these neighboring cities, start there instead — same cash, same as-is purchase, same no-fee promise.</p>
+      </div>
+      <div class="linkrow">
+        <a href="/areas-we-serve/fremont">Sell a house in Fremont</a>
+        <a href="/areas-we-serve/newark">Sell a house in Newark</a>
+        <a href="/areas-we-serve/union-city">Sell a house in Union City</a>
+        <a href="/areas-we-serve">See all areas we serve</a>
+      </div>
+    </div>
+  </section>
+
+  <OfferBand source="NextKey Site - Hayward" />
+</Base>

@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site.js';
+---
+<Base title="Privacy Policy | NextKey Home Offer" description="How NextKey Home Offer collects, uses, and protects the information you share when you request a cash offer." offerHref="/#offer">
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p class="upd" style="color:var(--muted-dark);font-family:var(--font-mono);font-size:.9rem;margin-top:10px">Last updated: June 2026</p>
+    </div>
+  </section>
+
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="prose">
+        <p>This Privacy Policy explains how {site.name} ("NextKey," "we," "us") collects, uses, and protects the information you share when you request a cash offer or contact us through this website.</p>
+
+        <h2>Information we collect</h2>
+        <p>When you submit our offer form or contact us, we collect the details you provide, which may include your name, phone number, and the address of the property you want to sell. We may also collect standard analytics data such as your IP address, device type, pages viewed, and the ad or search that brought you here.</p>
+
+        <h2>How we use your information</h2>
+        <ul>
+          <li>To prepare and present a cash offer for your property.</li>
+          <li>To contact you by phone or text about your inquiry and your property.</li>
+          <li>To improve our website, ads, and service.</li>
+          <li>To meet legal, tax, and recordkeeping requirements.</li>
+        </ul>
+
+        <h2>Calls and text messages</h2>
+        <p>By submitting the form or giving us your number, you agree that NextKey may call or text you about your property, including by automated means. Consent is not a condition of selling your home. Message and data rates may apply. Reply STOP to opt out of texts at any time.</p>
+
+        <h2>Sharing</h2>
+        <p>We do not sell your personal information. We share it only with service providers who help us operate, such as our CRM, title and escrow partners, and analytics tools, and only as needed to serve you or as required by law.</p>
+
+        <h2>Advertising and analytics</h2>
+        <p>We use Google Ads and analytics tools that may set cookies to measure ad performance and conversions. You can control cookies through your browser settings and opt out of personalized Google advertising at <a href="https://adssettings.google.com" rel="noopener">adssettings.google.com</a>.</p>
+
+        <h2>Your choices</h2>
+        <p>You may ask us to access, correct, or delete the personal information we hold about you. California residents have additional rights under the CCPA, including the right to know and the right to delete. To make a request, call or text {site.phone}.</p>
+
+        <h2>Contact</h2>
+        <p>{site.name} · {site.address.locality}, {site.address.region} · {site.phone}</p>
+      </div>
+    </div>
+  </section>
+</Base>

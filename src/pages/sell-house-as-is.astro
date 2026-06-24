@@ -1,0 +1,219 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import OfferBand from '../components/OfferBand.astro';
+import { serviceSchema } from '../lib/schema.js';
+import { site } from '../data/site.js';
+
+const title = 'Sell Your House As-Is for Cash | NextKey Home Offer';
+const description = 'Sell your Bay Area house exactly as-is. No repairs, no cleaning, no showings. We buy with our own funds, handle the cleanup, and let you pick the closing date.';
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Sell House As-Is', path: '/sell-house-as-is' },
+];
+---
+<Base title={title} description={description}
+  schema={[
+    serviceSchema({
+      name: 'Sell Your House As-Is for Cash',
+      description: 'Sell your Bay Area house exactly as-is — no repairs, no cleaning, no showings. We buy with our own funds and close on your timeline.',
+    }),
+  ]}
+  ogTitle="Sell Your House As-Is for Cash — No Repairs, No Cleaning"
+  ogDescription="We buy Bay Area houses in any condition, exactly as they sit. Skip the repairs and the cleanup, pick your closing date, and get a real cash offer.">
+
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">Sell as-is · Any condition</span>
+      <h1>Sell Your House As-Is for Cash — No Repairs, No Cleaning</h1>
+      <p>Old roof, dated kitchen, a garage full of stuff you don't want to deal with. Leave all of it. We buy Bay Area houses exactly as they sit, with our own funds, and close on the date you choose.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- WHAT AS-IS REALLY MEANS -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>What "as-is" actually means when you sell to us</h2>
+          <p>When most buyers say "as-is," there is still a catch. They make an offer, send an inspector through, and then come back asking for a price cut or a list of repairs before they will close. That is not how we work. When NextKey says we buy as-is, we mean we buy the house in its current condition, with no repair requests, no credits to negotiate, and no surprise re-trade after you have already accepted.</p>
+          <p>You do not fix anything. You do not paint, patch, or stage. You do not even have to clean. We look at the home as it is today, factor the condition into a fair cash number, and that is the offer. Because we buy with our own funds, there is no bank, no appraisal, and no lender deciding the house needs a new roof before money changes hands. The number we send is the number you get.</p>
+          <p>This matters most when a house would never pass a traditional sale. Banks will not lend on homes with major issues, which means a listed property with a bad foundation or fire damage often sits, then falls out of escrow when the buyer's financing collapses. We remove that risk entirely. We are the buyer and the funds, so the deal does not hinge on anyone else's approval.</p>
+        </div>
+        <aside class="aside-card">
+          <h3>As-is, the NextKey way</h3>
+          <ul>
+            <li>No repairs and no cleaning</li>
+            <li>No inspection re-trade after you accept</li>
+            <li>No appraisal or lender conditions</li>
+            <li>We cover standard closing costs</li>
+            <li>Take what you want, leave the rest</li>
+            <li>You pick the closing date</li>
+          </ul>
+          <h3 style="margin-top:24px">Have an unusual situation?</h3>
+          <p>If you are not sure we'd buy your house, just ask. A real person answers.</p>
+          <a class="btn btn--primary btn--block" href={site.phoneHref} data-track="call">Call {site.phone}</a>
+          <a class="btn btn--ghost btn--block" href={site.smsHref} data-track="text" style="margin-top:12px">Text {site.phone}</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDITIONS WE BUY THROUGH -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Conditions we buy through</span>
+        <h2>If the house needs work, that is exactly why people call us</h2>
+        <p>You do not need a market-ready home to get a real cash offer. Here are the conditions we buy through all the time. If yours isn't on the list, it probably belongs here too.</p>
+      </div>
+      <div class="local-grid">
+        <article class="local-card">
+          <h3>Old or leaking roof</h3>
+          <p>Curling shingles, active leaks, or a roof that's simply at the end of its life. We don't ask you to replace it before closing.</p>
+        </article>
+        <article class="local-card">
+          <h3>Foundation problems</h3>
+          <p>Settling, cracks, or sloping floors that scare off traditional buyers. We factor it in and still buy the house.</p>
+        </article>
+        <article class="local-card">
+          <h3>Plumbing &amp; electrical</h3>
+          <p>Outdated wiring, failing water heaters, galvanized or leaking pipes, knob-and-tube. Leave it for us to handle.</p>
+        </article>
+        <article class="local-card">
+          <h3>Fire or water damage</h3>
+          <p>Smoke, flood, burst pipes, or a kitchen fire. We buy damaged homes that banks won't lend on and lenders won't touch.</p>
+        </article>
+        <article class="local-card">
+          <h3>Mold &amp; moisture</h3>
+          <p>Mold, dry rot, or chronic moisture issues. There is no need to remediate first or pass a clearance test for us.</p>
+        </article>
+        <article class="local-card">
+          <h3>Hoarder or cluttered homes</h3>
+          <p>Full rooms, packed garages, years of belongings. You do not have to haul it out. Take what matters and leave the rest.</p>
+        </article>
+        <article class="local-card">
+          <h3>Code violations</h3>
+          <p>Open permits or notices from the city. We are used to working through code issues and closing anyway.</p>
+        </article>
+        <article class="local-card">
+          <h3>Unpermitted additions</h3>
+          <p>A converted garage, a back unit, or square footage that was never permitted. We buy it as it stands today.</p>
+        </article>
+        <article class="local-card">
+          <h3>Deferred maintenance</h3>
+          <p>Years of small repairs never done, dated finishes, tired kitchens and baths. Totally fine. That's our normal.</p>
+        </article>
+        <article class="local-card">
+          <h3>Tenants still in place</h3>
+          <p>Occupied rentals, month-to-month, or tenants you'd rather not manage. We buy with tenants in place and sort it out.</p>
+        </article>
+      </div>
+      <p class="sits-note">Not sure your house qualifies? It almost certainly does. <a href={site.phoneHref} data-track="call">Call or text {site.phone}</a> and describe it in your own words, or learn more about <a href="/sell-my-house-fast">selling your house fast</a>.</p>
+    </div>
+  </section>
+
+  <!-- LEAVE WHAT YOU DON'T WANT -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Leave what you don't want</span>
+        <h2>Take what matters. We handle the rest.</h2>
+        <p>One of the most stressful parts of selling an older or full house is the cleanout. With NextKey, you don't carry that weight. Pack what you want to keep, walk away from the rest, and we take care of the cleanup after closing.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg></div>
+          <h3>No cleanout required</h3>
+          <p>Old furniture, appliances, boxes, and clutter can stay. You don't rent a dumpster or hire a hauler. We deal with all of it.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <h3>Help with the move</h3>
+          <p>We can point you toward trusted local movers and storage, and in the right situations we've even helped cover the cost.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 15 11 17 15 13"/></svg></div>
+          <h3>Leave on your schedule</h3>
+          <p>You pick the closing date and how much time you need to move out. Need a few extra weeks after closing? We can work that out.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS RECAP -->
+  <section class="band band--dark">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">How selling as-is works</span>
+        <h2>Three steps. No repairs in between.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__n">Step 01</div>
+          <h3>Tell us about the house</h3>
+          <p>Share the address and describe the condition honestly, problems and all. By form, phone, or text. It takes about two minutes.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 02</div>
+          <h3>Get your as-is cash offer</h3>
+          <p>We review recent local sales and the home's true condition, then send a fair, written cash offer, usually within 24 hours.</p>
+        </div>
+        <div class="step">
+          <div class="step__n">Step 03</div>
+          <h3>Pick your date and get paid</h3>
+          <p>Accept when you're ready, leave what you don't want, and close at a reputable local title company in as few as 7 days.</p>
+        </div>
+      </div>
+      <div class="steps-cta"><a class="btn btn--primary btn--lg" href="#offer">Get my as-is offer</a> <a class="btn btn--ghost btn--lg" href="/how-it-works">See the full process</a></div>
+    </div>
+  </section>
+
+  <!-- REVIEW QUOTE -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">From a real seller</span>
+        <h2>Houses that needed work, bought as-is</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"Our house needed a lot of repairs, but they bought it as-is and handled everything. They even helped us with resources to find a new place."</p>
+          <cite>Robert Day</cite>
+        </figure>
+        <figure class="quote">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>"Made selling our house in Fremont super easy. They bought it as-is and let us leave behind whatever we didn't want."</p>
+          <cite>Sam H · Fremont</cite>
+        </figure>
+      </div>
+      <p class="sits-note" style="text-align:center"><a href="/testimonials">Read more seller stories &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- INTERNAL LINKS -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">Where to go next</span>
+        <h2>Selling for a specific reason?</h2>
+        <p>As-is selling overlaps with a lot of situations. If one of these sounds like yours, we have a page that speaks to it directly.</p>
+      </div>
+      <div class="linkrow">
+        <a href="/sell-my-house-fast">Sell my house fast for cash</a>
+        <a href="/stop-foreclosure">Behind on payments or facing foreclosure</a>
+        <a href="/sell-inherited-house">Selling an inherited house</a>
+        <a href="/areas-we-serve">See the areas we serve</a>
+      </div>
+    </div>
+  </section>
+
+  <OfferBand source="NextKey Site - As-Is" />
+</Base>

@@ -1,0 +1,33 @@
+---
+import LeadForm from './LeadForm.astro';
+import { site } from '../data/site.js';
+// Reusable dark "get your offer" section. The LeadForm inside carries id="offer"
+// so header/mobile CTAs (href="#offer") scroll here.
+const {
+  source = 'NextKey Site',
+  eyebrow = 'Get started',
+  title = 'See your cash offer in 24 hours',
+  blurb = 'No fee, no obligation, no pressure. Most offers go out within one business day — get your number and decide on your own time.',
+  heading = 'Get my cash offer',
+  sub = 'No obligation. Takes about 2 minutes.',
+} = Astro.props;
+---
+<section class="band band--dark" id="offer-band">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow" style="color:var(--flare);display:block;margin-bottom:14px">{eyebrow}</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:12px">{title}</h2>
+        <p style="color:var(--muted-dark);font-size:1.06rem;max-width:48ch;margin-bottom:20px">{blurb}</p>
+        <div class="chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Cash offer in 24 hrs</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>No fees or commissions</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Sell as-is</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>You pick the close date</span>
+        </div>
+        <p style="margin-top:20px;color:var(--muted-dark)">Prefer to talk? <a href={site.phoneHref} data-track="call" style="color:var(--flare);font-weight:600;text-decoration:none">Call or text {site.phone}</a>.</p>
+      </div>
+      <LeadForm source={source} heading={heading} sub={sub} />
+    </div>
+  </div>
+</section>

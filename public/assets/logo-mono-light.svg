@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 22 160 158" width="200" height="198" role="img" aria-label="NextKey Home Offer mark, light">
+  <defs>
+    <mask id="nk-keyhole">
+      <rect width="200" height="200" fill="#fff"/>
+      <circle cx="100" cy="112" r="17" fill="#000"/>
+      <path d="M93 120 L87 150 L113 150 L107 120 Z" fill="#000"/>
+    </mask>
+  </defs>
+  <path d="M93 35 Q100 30 107 35 L164 84 L164 156 Q164 168 152 168 L48 168 Q36 168 36 156 L36 84 Z" fill="#F4ECE3" mask="url(#nk-keyhole)"/>
+  <path d="M93 35 Q100 30 107 35 L164 86 L36 86 Z" fill="#FB8B3C" mask="url(#nk-keyhole)"/>
+</svg>

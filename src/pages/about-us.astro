@@ -1,0 +1,145 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import OfferBand from '../components/OfferBand.astro';
+import { aboutSchema } from '../lib/schema.js';
+import { site } from '../data/site.js';
+
+const title = 'About NextKey Home Offer | Local Bay Area Cash Buyer';
+const description = 'Meet NextKey Home Offer, a locally owned Fremont cash home-buying company led by Edward Olivares. Honest offers, no pressure, and real help through your move.';
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about-us' },
+];
+---
+<Base title={title} description={description} schema={[aboutSchema()]}
+  ogTitle="About NextKey Home Offer"
+  ogDescription="A locally owned Bay Area cash buyer. Honest offers, no pressure, proof of funds on request, and real help through your move.">
+
+  <section class="subhero">
+    <div class="subhero__in">
+      <span class="eyebrow subhero__eyebrow">About us · Locally owned</span>
+      <h1>About NextKey Home Offer</h1>
+      <p>We are a local, Fremont-based cash home-buying company built for Bay Area homeowners who want a straight answer and a simpler way to sell. Real people, our own funds, and no pressure.</p>
+      <div class="subhero__cta">
+        <a class="btn btn--primary btn--lg" href="#offer">Get my cash offer</a>
+        <a class="btn btn--ghost btn--lg" href={site.phoneHref} data-track="call">Call or text {site.phone}</a>
+      </div>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+
+  <!-- STORY -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="cols-2">
+        <div class="prose">
+          <h2>A local company, not a national call center</h2>
+          <p>NextKey Home Offer is a locally owned cash home buyer based in Fremont and serving the East Bay. We are led by {site.founder}, who built this company on a simple idea: selling a house should not feel like a fight. Most homeowners who reach out to us are not chasing the highest possible price. They want a fair number, a clear timeline, and to deal with someone who treats them like a neighbor instead of a lead.</p>
+          <p>We started NextKey because the usual options leave a lot of sellers stuck. Listing with an agent means repairs, showings, months of waiting, and a buyer whose loan can fall through at the last minute. The big national "we buy houses" outfits move fast, but you often end up talking to a faraway office that has never set foot in the Bay Area and does not understand what a home here is actually worth. We wanted to sit in the middle: as quick and certain as a cash buyer, but local, personal, and grounded in real Bay Area values.</p>
+
+          <h3>How we are different</h3>
+          <p>We are from here, so we know the difference between Fremont, Newark, Union City, and Hayward, and we price each home on its own street and condition rather than a national formula. When we make an offer, we buy with our own funds, which means there is no bank, no appraisal, and no financing contingency waiting to unravel the deal. You can ask us for proof of funds at any time and we will show it.</p>
+          <p>We also try to make the part after the offer easier. Selling a house is rarely just a transaction; it is a move, a transition, sometimes the end of a long chapter. We offer white-glove help with the things that pile up, from coordinating the timeline around your next place to pointing you toward trusted local movers and storage. You set the closing date, and we work around your life instead of the other way around.</p>
+
+          <h3>What we stand for</h3>
+          <p>Our values are not complicated. We tell the truth, even when it means saying that selling to a cash buyer is not the right move for you. We make fair offers and explain how we got to the number, so nothing feels like a mystery or a trick. We do not use pressure, deadlines, or scare tactics; the offer is yours to take, sit on, or walk away from. And we close where it is safe and verified, at a reputable local title company where a licensed professional handles the paperwork and the money is real.</p>
+          <p>One thing we are careful about: NextKey is a local cash buyer, not a real estate brokerage, and we do not give legal or tax advice. If your situation calls for it, we will tell you to talk with an attorney or tax professional first. We would rather you make a confident, well-informed choice than a rushed one. If you want to weigh the trade-offs in plain English, read <a href="/why-sell">why sellers choose NextKey</a>, or see exactly what happens after you reach out on our <a href="/how-it-works">how it works</a> page.</p>
+        </div>
+        <aside class="aside-card">
+          <h3>Quick facts</h3>
+          <ul>
+            <li>Locally owned and operated in Fremont</li>
+            <li>Serves Fremont and the East Bay</li>
+            <li>No fees and no commissions</li>
+            <li>Cash offers in about 24 hours</li>
+            <li>We buy with our own funds</li>
+            <li>Proof of funds on request</li>
+            <li>Open every day, 24 hours</li>
+          </ul>
+          <h3 style="margin-top:24px">Talk to us</h3>
+          <p>Have a question or want to talk through your situation first? A real person answers.</p>
+          <a class="btn btn--primary btn--block" href={site.phoneHref} data-track="call">Call {site.phone}</a>
+          <a class="btn btn--ghost btn--block" href={site.smsHref} data-track="text" style="margin-top:12px">Text {site.phone}</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE WAY WE WORK -->
+  <section class="band band--surface">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">The way we work</span>
+        <h2>Honest, local, and built around you</h2>
+        <p>Every house and every seller is different. What stays the same is how we treat you and how we get to a fair number.</p>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>Local know-how</h3>
+          <p>We live and work in the Bay Area, so we price your home on its real block and condition, not a one-size-fits-all national model.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>No pressure, ever</h3>
+          <p>Our offers carry no obligation and no deadline games. Take it, think it over, or walk away. We will not chase or push you.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg></div>
+          <h3>Real, verifiable funds</h3>
+          <p>We buy with our own cash and can show proof of funds on request, so you know the offer is genuine before you ever commit.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 4.6L18 9l-4.1 1.4L12 15l-1.9-4.6L6 9l4.1-1.4z"/><path d="M5 15l.8 2.2L8 18l-2.2.8L5 21l-.8-2.2L2 18l2.2-.8z"/></svg></div>
+          <h3>White-glove help</h3>
+          <p>From timing the move to finding trusted local movers and storage, we help with the parts of selling that wear people down.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 15 11 17 15 13"/></svg></div>
+          <h3>You set the date</h3>
+          <p>Need to close in as few as 7 days, or 60 to 90 days out? You choose. We build the timeline around your life, not ours.</p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="22" x2="21" y2="22"/><polygon points="12 2 21 7 3 7"/><line x1="5" y1="10" x2="5" y2="18"/><line x1="10" y1="10" x2="10" y2="18"/><line x1="14" y1="10" x2="14" y2="18"/><line x1="19" y1="10" x2="19" y2="18"/></svg></div>
+          <h3>Safe local closings</h3>
+          <p>We close at a reputable Bay Area title company, so a licensed professional handles the paperwork and the money is verified.</p>
+        </article>
+      </div>
+      <p class="sits-note">NextKey is a local cash buyer, not a brokerage, and we do not provide legal or tax advice.</p>
+    </div>
+  </section>
+
+  <!-- PROOF + AREAS -->
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="eyebrow">See it for yourself</span>
+        <h2>Don't take our word for it</h2>
+        <p>The best way to judge a local buyer is by the sellers they have worked with and the neighborhoods they actually serve.</p>
+      </div>
+      <div class="grid grid--2">
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+          <h3>Real seller stories</h3>
+          <p>We hold a {site.rating.value} average rating on Google from homeowners we actually bought from. Read their words in their own voice.</p>
+          <p style="margin-top:12px"><a href="/testimonials">Read our testimonials &rarr;</a></p>
+        </article>
+        <article class="card">
+          <div class="card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h3>Where we buy</h3>
+          <p>We buy houses across Fremont, Newark, Union City, Hayward, and the wider East Bay. See whether we cover your city.</p>
+          <p style="margin-top:12px"><a href="/areas-we-serve">See the areas we serve &rarr;</a></p>
+        </article>
+      </div>
+      <div class="linkrow">
+        <a href="/how-it-works">See our simple 3-step process</a>
+        <a href="/sell-my-house-fast">Why sellers choose a fast cash sale</a>
+        <a href="/contact">Get in touch with NextKey</a>
+      </div>
+    </div>
+  </section>
+
+  <OfferBand source="NextKey Site - About" />
+</Base>

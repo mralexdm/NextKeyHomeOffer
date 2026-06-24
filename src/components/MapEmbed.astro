@@ -1,0 +1,24 @@
+---
+import { site } from '../data/site.js';
+// Google Maps place-embed tied to the GBP listing. Falls back to a labelled
+// placeholder until the GBP share-embed URL is added to site.gbpEmbedSrc.
+const { title = `${site.name} — ${site.address.locality}, ${site.address.region}`, src = site.gbpEmbedSrc } = Astro.props;
+---
+{src ? (
+  <div class="map-embed">
+    <iframe
+      src={src}
+      title={title}
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+    ></iframe>
+  </div>
+) : (
+  <div class="map-embed">
+    <div class="map-embed__todo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>Map loads here once the Google Business Profile embed URL is added.</span>
+    </div>
+  </div>
+)}
