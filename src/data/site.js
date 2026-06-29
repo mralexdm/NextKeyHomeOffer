@@ -33,7 +33,7 @@ export const site = {
     id: 'AW-18257642937',
     conversions: {
       lead: 'AW-18257642937/-ixTCJ3MtsQcELmL9oFE',
-      call: 'AW-18257642937/69Z1CNfNtsQcELmL9oFE',
+      call: 'AW-18257642937/lFfKCJmb8MccELmL9oFE',
       text: 'AW-18257642937/YQFXCNrNtsQcELmL9oFE',
     },
   },
